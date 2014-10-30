@@ -50,4 +50,6 @@
 					'walker'          => ''
 					 ) ); ?>
 		</nav>
-	<div id="main" class="site-main">
+		<div id="main-antes" class="sem-margem col-md-1 antes"></div>
+	<div id="main-loja" class="site-main sem-margem col-md-9">
+		

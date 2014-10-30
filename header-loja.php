@@ -28,11 +28,26 @@
     
 <div id="page-loja" class="hfeed site col-md-12 sem-margem">
 	<?php do_action( 'before' ); ?>
-	<header id="faixa" role="banner">
-				<nav id="site-navigation" class=" inline-block navigation-loja" role="navigation">
-					<h1 class="menu-toggle"><?php _e( 'Menu', 'oqimporta' ); ?></h1>
-					<?php wp_nav_menu( array( 'theme_location' => 'loja' ) ); ?>
-				</nav><!-- #site-navigation -->		
-	</header><!-- #masthead -->
-
+		<nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+				<?php
+				$wrap= '<ul id="%1$s" class="%2$s">%3$s</ul><a class= "inline-block link-carrinho" href="#"><img src="'.get_template_directory_uri().'/images/carrinho-menu.png"></a>';
+				 wp_nav_menu( array( 
+					'theme_location' => 'loja',
+					'menu'            => '',
+					'container'       => 'div',
+					'container_class' => 'container collapse navbar-collapse inline-block ',
+					'container_id'    => 'container-menu-loja',
+					'menu_class'      => 'menu nav navbar-nav ',
+					'menu_id'         => '',
+					'echo'            => true,
+					'fallback_cb'     => 'wp_page_menu',
+					'before'          => '',
+					'after'           => '',
+					'link_before'     => '',
+					'link_after'      => '',
+					'items_wrap'      => $wrap,
+					'depth'           => 0,
+					'walker'          => ''
+					 ) ); ?>
+		</nav>
 	<div id="main" class="site-main">

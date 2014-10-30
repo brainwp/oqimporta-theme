@@ -1110,11 +1110,17 @@ object {
 	color: #777;
 	margin: 20px auto 0 auto;
 }
-#faixa{
-	height:100px;
+.navbar.navbar-fixed-top{
 	width:100%;
 	background:black;
 	margin:0;
+	
+}
+#menu-menu-da-loja a{
+	color:#ece8de;	
+	font-weight:lighter;
+	font-size:1.1em;
+	font-family: 'Open Sans', sans-serif;
 }
 html .sem-margem{
 	margin:0;
@@ -1126,4 +1132,20 @@ html .sem-margem{
 }
 .logo-loja{
 	background-image:url('images/logo-loja.png');
+}
+body { padding-top: 70px;
+	min-height:3000px 
+	}
+#container-menu-loja{
+	max-width: 1120px;
+	width: 100%;
+	margin: 0 auto;
+	float: none;
+	padding:15px 0;
+}
+#menu-menu-da-loja > li {
+	padding-right:15px;
+}
+.link-carrinho{
+	float:right;
 }

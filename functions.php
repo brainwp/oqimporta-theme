@@ -64,6 +64,7 @@ function oqimporta_setup() {
 	 */
 	register_nav_menus( array(
 		'primary' => __( 'Menu Blog', 'oqimporta' ),
+		'loja'=>__( 'Menu Loja', 'oqimporta' )
 		)
 	);
 		
@@ -166,3 +167,13 @@ function filter_oqimporta( $content ) {
 }
 
 add_filter( 'the_content', 'filter_oqimporta' );
+///////////////////////////////////////////////////////////////////
+//////////livrando o style de uma linha muito comprida para editar ele melhor
+/**
+ * Proper way to enqueue scripts and styles
+ */
+function theme_name_scripts() {
+	wp_enqueue_style( 'linha', get_template_directory_uri().'/linha.css' );
+}
+
+add_action( 'wp_enqueue_scripts', 'theme_name_scripts' );

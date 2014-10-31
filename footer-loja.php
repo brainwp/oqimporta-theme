@@ -8,8 +8,7 @@
  */
 ?>
 
-	</div><!-- #main-loja -->
-	<div id="main-depois" class="sem-margem col-md-2 depois"></div>
+	</div><!-- #main -->
 	
 	<div class="clearfix"></div>
 	<footer id="colophon" class="site-footer" role="contentinfo">

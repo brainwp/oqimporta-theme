@@ -51,7 +51,7 @@ html {
 	-webkit-text-size-adjust: 100%; /* Prevents iOS text size adjust after orientation change, without disabling user zoom */
 	-ms-text-size-adjust: 100%; /* www.456bereastreet.com/archive/201012/controlling_text_size_in_safari_for_ios_without_disabling_user_zoom/ */
 }
-body {
+.page-template-page-loja-php {
 	background: #fff;
 }
 
@@ -1155,7 +1155,7 @@ body { padding-top: 80px;
 	}
 #container-menu-loja{
 	max-width: 1020px;
-	width: 100%;
+	width: 70%;
 	margin: 0 0 0 7.3%;
 	float: none;
 	padding:15px 0;
@@ -1166,16 +1166,24 @@ body { padding-top: 80px;
 .link-carrinho{
 	float:right;
 }
-#main-loja, #main-antes, #main-depois{
+#meio, #antes, #depois{
 	background-color:#ece7d9;
 	min-height:600px;
 }
 .shopping-title{
 	padding:35px 0;
 }
-#imagem-destaque{
+#imagem-destaque, #imagem-post-destaque{
 	padding:20px;
 	background-color:#ffffff;
+	width:100%;
+	max-width:670px;
+}
+#imagem-destaque img, #imagem-post-destaque img{
+	width:100%;
+}
+#lista-slider{
+	max-width:670px;
 }
 .link-carrinho img{
 	margin-top:10px;
@@ -1196,12 +1204,13 @@ body { padding-top: 80px;
 }
 #menu-categoria{
 	border-left:solid 1.5px red;
-	margin-left:50px;
+	margin-left:40px;
 	height: 175px;
 	
 }
 #menu-categoria ul{
 	margin-top:-10px;
+	margin:-10px 0 10px 30px;
 }
 #menu-categoria li{
 	margin-bottom:10px;
@@ -1243,3 +1252,86 @@ body { padding-top: 80px;
 	right:0;
 	
 }
+
+
+#menu-menu-da-loja .active>a, #menu-menu-da-loja a:hover{
+	background:none;
+	color:#FD602F;
+}
+.glyphicon-plus:before {
+color: #ffffff;
+}
+glyphicon-plus:before:hover{
+	color:#FD602F;
+	
+}
+.page-template-page-loja-php #content{
+	max-width:1020px;
+	margin:0 auto;
+}
+.products li img{
+	width: 289px;
+	padding: 20px;
+	background: #ffffff;
+}
+
+ ul.products{margin:30px 0 0 0 ;
+	}
+
+.products img{
+	padding:0;
+}
+#imagem-post-destaque{
+	padding:0;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+@media screen and (max-width: 767px) {
+	#antes, #depois{
+		display:none;}
+	.shopping-title img{
+		width:70%;
+		margin-left:10%;
+		max-width:400px;
+	}
+	#menu-categoria{
+		margin:0;
+		border-left:0;
+	}
+	#menu-categoria ul li{
+		display:inline-block;
+		margin:20px 20px 0 0;
+	}
+	.page-template-page-loja-php {
+	padding-top: 40px;
+	
+	}
+	.products li a {
+	margin:0 auto;
+	display: block;
+	max-width:289px;
+	}
+}
+@media screen and (max-width: 500px) {
+	#menu-categoria ul li{
+		font-size:0.6em;
+	}
+}
+	
+	
+	
+	
+	
+	
+	
+	

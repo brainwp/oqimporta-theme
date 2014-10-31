@@ -22,34 +22,39 @@
 <?php wp_head(); ?>
 </head>
 
-<body <?php body_class(); ?>>
+<body  <?php body_class(); ?>>
 
 
-    
-<div id="page-loja" class="hfeed site col-md-12 sem-margem">
+    <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+	    <!-- Brand and toggle get grouped for better mobile display -->
+	    <div class="navbar-header">
+	        <button type="button" class="navbar-toggle glyphicon glyphicon-plus" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+	            
+	        </button>
+	    </div>
+
+	    <!-- Collect the nav links, forms, and other content for toggling -->
+	    <div id="container-menu-loja" class="collapse navbar-collapse navbar-ex1-collapse">
+	        <?php
+			$wrap= '<ul id="%1$s" class="%2$s">%3$s</ul><a class= "inline-block link-carrinho" href="#"><img src="'.get_template_directory_uri().'/images/carrinho-menu.png"></a>';
+			
+	        wp_nav_menu( array(
+	            'theme_location' => 'loja',
+	            'depth' => 2,
+	            'container' => false,	
+	            'menu_class' => 'nav navbar-nav',
+	            'fallback_cb' => 'wp_page_menu',
+				'items_wrap'      => $wrap,
+	
+	            //Process nav menu using our custom nav walker
+	            'walker' => new wp_bootstrap_navwalker())
+	        );
+	        ?>
+	    </div><!-- /.navbar-collapse --> 
+	</nav>
+	
+<div id="page-loja" class="hfeed site  sem-margem">
 	<?php do_action( 'before' ); ?>
-		<nav class="navbar navbar-default navbar-fixed-top" role="navigation">
-				<?php
-				$wrap= '<ul id="%1$s" class="%2$s">%3$s</ul><a class= "inline-block link-carrinho" href="#"><img src="'.get_template_directory_uri().'/images/carrinho-menu.png"></a>';
-				 wp_nav_menu( array( 
-					'theme_location' => 'loja',
-					'menu'            => '',
-					'container'       => 'div',
-					'container_class' => 'container collapse navbar-collapse inline-block ',
-					'container_id'    => 'container-menu-loja',
-					'menu_class'      => 'menu nav navbar-nav ',
-					'menu_id'         => '',
-					'echo'            => true,
-					'fallback_cb'     => 'wp_page_menu',
-					'before'          => '',
-					'after'           => '',
-					'link_before'     => '',
-					'link_after'      => '',
-					'items_wrap'      => $wrap,
-					'depth'           => 0,
-					'walker'          => ''
-					 ) ); ?>
-		</nav>
-		<div id="main-antes" class="sem-margem col-md-1 antes"></div>
-	<div id="main-loja" class="site-main sem-margem col-md-9">
+		
+	<div id="main-loja" class="site-main sem-margem">
 		

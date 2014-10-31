@@ -64,7 +64,8 @@ function oqimporta_setup() {
 	 */
 	register_nav_menus( array(
 		'primary' => __( 'Menu Blog', 'oqimporta' ),
-		'loja'=>__( 'Menu Loja', 'oqimporta' )
+		'loja'=>__( 'Menu Loja', 'oqimporta' ),
+		'loja_categorias'=>__( 'Menu Categorias da Loja', 'oqimporta' )
 		)
 	);
 		
@@ -185,11 +186,13 @@ add_filter( 'the_content', 'filter_oqimporta' );
 /**
  * Proper way to enqueue scripts and styles
  */
-function theme_name_scripts() {
+function estilos() {
 	wp_enqueue_style( 'linha', get_template_directory_uri().'/linha.css' );
+	wp_enqueue_style( 'loja', get_template_directory_uri().'/loja.css' );
+	
 }
 
-add_action( 'wp_enqueue_scripts', 'theme_name_scripts' );
+add_action( 'wp_enqueue_scripts', 'estilos' );
 
 ///////////////////////////////////////////////////////////////////
 /////////////////////////////////////////google fonts

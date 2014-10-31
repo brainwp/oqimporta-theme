@@ -40,6 +40,8 @@ table, caption, tbody, tfoot, thead, tr, th, td {
 	outline: 0;
 	padding: 0;
 	vertical-align: baseline;
+	font-family: 'Source Sans Pro', sans-serif;
+	
 }
 @import url("linha.css");
 
@@ -1113,13 +1115,14 @@ object {
 .navbar.navbar-fixed-top{
 	width:100%;
 	background:black;
+	border:none;
 	margin:0;
 	
 }
 #menu-menu-da-loja a{
 	color:#ffffff;	
 	font-weight:lighter;
-	font-size:1.1em;
+	font-size:1.2em;
 	font-family: 'Source Sans Pro', sans-serif;
 	/* IE 8 */
 	  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=80)";
@@ -1208,6 +1211,35 @@ body { padding-top: 80px;
 	font-family: 'Source Sans Pro', sans-serif;
 	font-weight:200;
 	color:#444444;
-	text-decoration: none;
-    
+	text-decoration: none;   
+}
+#titulo-destaque h3{
+	margin:0;
+	padding:0;
+	font-weight:lighter;
+	font-size:1.3em;
+	  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=80)";
+
+	  /* IE 5-7 */
+	  filter: alpha(opacity=80);
+
+	  /* Netscape */
+	  -moz-opacity: 0.8;
+
+	  /* Safari 1.x */
+	  -khtml-opacity: 0.8;
+
+	  /* Good browsers */
+	  opacity: 0.8;
+}
+#titulo-destaque{
+	position:relative;
+	float:right;
+	padding:20px;
+	background:#000000;
+	color:#ffffff;
+	margin-top:-45px;
+	width:93%;
+	right:0;
+	
 }

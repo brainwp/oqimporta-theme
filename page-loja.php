@@ -12,7 +12,7 @@ get_header('loja'); ?>
 				<ul class="sem-margem">
 					<li class="" >
 						<div id="imagem-destaque"><img style="width:100%;" src="<?php echo get_template_directory_uri();?>/images/imagem-slider.jpg"></div>
-						<div id="titulo-destaque"></div>
+						<div id="titulo-destaque"><h3>Nome do destaque da home</h3></div>
 					</li>
 				</ul>
 			</div>

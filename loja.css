@@ -39,7 +39,8 @@ html .sem-margem{
 .logo-loja{
 	background-image:url('images/logo-loja.png');
 }
-.page-template-page-loja-php { padding-top: 80px;
+.page-template-page-loja-php, .single-product {
+ 	padding-top: 80px;
 	min-height:3000px 
 	}
 #container-menu-loja{
@@ -109,7 +110,7 @@ html .sem-margem{
 	color:#444444;
 	text-decoration: none;   
 }
-#titulo-destaque h3{
+#titulo-destaque h3, #titulo-destaque-post h3{
 	margin:0;
 	padding:0;
 	font-weight:lighter;
@@ -161,6 +162,17 @@ glyphicon-plus:before:hover{
 	padding: 20px;
 	background: #ffffff;
 }
+.duplo .enrolador-produto{
+	max-width:630px;
+	
+}
+li.duplo img{
+	width:630px;
+	max-height:275px;
+	
+}
+.duplo{
+}
 
  ul.products{margin:30px 0 0 0 ;
 	}
@@ -174,10 +186,27 @@ glyphicon-plus:before:hover{
 .enrolador-produto {
 	background: black;
 	max-width: 289px;
+	font-weight:lighter;
+	
+	
 }
 .enrolador-produto h5{
-	padding:15px;
+	padding: 25px;
 	display:inline-block;
+	font-weight:lighter;
+	-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=80)";
+
+	  /* IE 5-7 */
+	  filter: alpha(opacity=80);
+
+	  /* Netscape */
+	  -moz-opacity: 0.8;
+
+	  /* Safari 1.x */
+	  -khtml-opacity: 0.8;
+
+	  /* Good browsers */
+	  opacity: 0.8;
 	
 	
 }
@@ -185,10 +214,23 @@ glyphicon-plus:before:hover{
 	display:inline-block;
 	float:right;
 	margin:0;
-	padding:15px;
+	padding: 22px 10px;
+	-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=80)";
+
+	  /* IE 5-7 */
+	  filter: alpha(opacity=80);
+
+	  /* Netscape */
+	  -moz-opacity: 0.8;
+
+	  /* Safari 1.x */
+	  -khtml-opacity: 0.8;
+
+	  /* Good browsers */
+	  opacity: 0.8;
+	
 	
 }
-.enrolador
 
 
 
@@ -220,7 +262,7 @@ glyphicon-plus:before:hover{
 		display:inline-block;
 		margin:20px 20px 0 0;
 	}
-	.page-template-page-loja-php {
+	.page-template-page-loja-php, .single-product {
 	padding-top: 40px;
 	
 	}

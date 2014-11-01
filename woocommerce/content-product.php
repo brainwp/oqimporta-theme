@@ -37,30 +37,22 @@ if ( 0 == $woocommerce_loop['loop'] % $woocommerce_loop['columns'] )
 ?>
 <?php 
 	if($woocommerce_loop['loop'] == 5):?>
-		<div class=" slider">
-			<div id="slider" class="inline-block col-sm-8 sem-margem">
-				<?php get_template_part('loop','slider')?>
-				<ul id="lista-slider"class="sem-margem">
-					<li class="" >
-						<div id="imagem-post-destaque"><img  src="<?php echo get_template_directory_uri();?>/images/imagem-slider.jpg"></div>
-						<div id="titulo-destaque"><h3>Nome do ultimo post na Home</h3></div>
-					</li>
-				</ul>
-			</div>
-			<div class="clearfix"></div>
-		</div><!--slider row-->
 	<?php endif;
 ?>
 <li <?php 
-	$classes .=" col-sm-4 sem-margem";
+	if($woocommerce_loop['loop'] == 5):
+		array_push($classes, "duplo","col-sm-8 ", "sem-margem");
+	else:
+		array_push($classes, "col-sm-4 ", "sem-margem");
+	
+	endif;
 	post_class( $classes ); ?>>
-	
-	
 
 	<?php do_action( 'woocommerce_before_shop_loop_item' ); ?>
-
 	<a href="<?php the_permalink(); ?>">
-		<div class="enrolador-produto">
+		<div class="<?php 
+			if($woocommerce_loop['loop'] == 3 || $woocommerce_loop['loop'] == 5 || $woocommerce_loop['loop'] == 8 || $woocommerce_loop['loop'] == 11):
+				echo "sem-margem"; endif;?> enrolador-produto">
 		<?php
 			/**
 			 * woocommerce_before_shop_loop_item_title hook
@@ -71,7 +63,8 @@ if ( 0 == $woocommerce_loop['loop'] % $woocommerce_loop['columns'] )
 		
 			do_action( 'woocommerce_before_shop_loop_item_title' );
 		?>
-			<h5 class="sem-margem"><?php the_title(); ?></h5>
+			<h5 class="	<?php if($woocommerce_loop['loop'] == 5):
+					echo "destaque-produto"; endif;?>"><?php the_title(); ?></h5>
 
 		<?php
 			/**

@@ -131,10 +131,9 @@ add_action( 'widgets_init', 'oqimporta_widgets_init' );
  */
 function oqimporta_scripts() {
 	wp_enqueue_style( 'style', get_stylesheet_uri() );
-
 	wp_enqueue_script( 'navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20120206', true );
-
 	wp_enqueue_script( 'skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20130115', true );
+	wp_enqueue_script( 'menu-scroll', get_template_directory_uri() . '/js/menu-scroll.js', array( 'jquery' ) );
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
@@ -166,3 +165,34 @@ function filter_oqimporta( $content ) {
 }
 
 add_filter( 'the_content', 'filter_oqimporta' );
+
+
+/* Add last_item class to last li in wp_nav_menu lists*/
+function add_last_item_class($strHTML) {
+	$intPos = strripos($strHTML,'menu-item');
+	printf("%s last_item %s",
+		substr($strHTML,0,$intPos),
+		substr($strHTML,$intPos,strlen($strHTML))
+	);
+}
+add_filter('wp_nav_menu','add_last_item_class');
+
+
+function shortcode_center($atts, $content = null){
+     return '<div class="center">' . $content . '</div>';
+   }
+add_shortcode('center', 'shortcode_center');
+
+// Custom login
+function my_custom_login_logo() {
+    echo '<style type="text/css">
+        h1 a { background-image:url('.get_bloginfo('stylesheet_directory').'/images/logo-admin-oqimporta.png) !important; }
+		body { background-image:url('.get_bloginfo('stylesheet_directory').'/images/bg-geral.jpg) !important; }
+		.login #nav a, .login #backtoblog a { color: #b20000 !important;}
+    </style>';
+}
+
+add_action('login_head', 'my_custom_login_logo');
+
+// Ocultando Admin Bar
+add_filter('show_admin_bar', '__return_false');

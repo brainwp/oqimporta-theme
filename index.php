@@ -32,7 +32,8 @@ get_header('blog'); ?>
 
 			<?php endwhile; ?>
 
-			<?php oqimporta_content_nav( 'nav-below' ); ?>
+			<div class="nav-previous"><?php next_posts_link( __( '<span>&larr;</span> Posts Anteriores' ) ); ?></div>
+			<div class="nav-next"><?php previous_posts_link( __( 'Pr&oacute;ximos Posts <span>&rarr;</span>' ) ); ?></div>
 
 		<?php else : ?>
 

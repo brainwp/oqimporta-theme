@@ -1,7 +1,7 @@
 <?php
 /** Template Name: Home */
 
-get_header(); ?>
+get_header('blog'); ?>
 
 		<div id="content" class="site-content" role="main">
 

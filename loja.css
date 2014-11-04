@@ -163,14 +163,39 @@ glyphicon-plus:before:hover{
 	background: #ffffff;
 }
 .duplo .enrolador-produto{
-	max-width:630px;
+	max-width:629px;
+	width:100%;
+	background:transparent;
+	
+}
+.duplo .enrolador-produto h5{
+	position: relative;
+	top: -45px;
+	background-color: #000000;
+	width: 95%;
+	left: 32px;
+	 -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=80)";
+
+	  /* IE 5-7 */
+	  filter: alpha(opacity=100);
+
+	  /* Netscape */
+	  -moz-opacity: 1;
+
+	  /* Safari 1.x */
+	  -khtml-opacity:1;
+
+	  /* Good browsers */
+	  opacity: 1;
 	
 }
 li.duplo img{
-	width:630px;
-	max-height:275px;
-	
+	max-width:629px;
+	max-height:345px;
+	width:100%;
+	height:100%;
 }
+
 .duplo{
 }
 
@@ -228,8 +253,6 @@ li.duplo img{
 
 	  /* Good browsers */
 	  opacity: 0.8;
-	
-	
 }
 
 

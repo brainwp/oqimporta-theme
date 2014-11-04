@@ -4,7 +4,7 @@ Theme URI: http://brasa.art.br
 Author: Brasa Design e Tecnologia
 Author URI: http://brasa.art.br/
 Description: Tema desenvolvido para a empresa O Q Importa de Vanessa Voltan e Ceu Guerra.
-Version: 0.5
+Version: 0.3
 License: GNU General Public License
 License URI: license.txt
 Tags:
@@ -32,6 +32,7 @@ dl, dt, dd, ol, ul, li,
 fieldset, form, label, legend,
 table, caption, tbody, tfoot, thead, tr, th, td {
 	border: 0;
+	font-family: inherit;
 	font-size: 100%;
 	font-style: inherit;
 	font-weight: inherit;
@@ -39,14 +40,18 @@ table, caption, tbody, tfoot, thead, tr, th, td {
 	outline: 0;
 	padding: 0;
 	vertical-align: baseline;
+	font-family: 'Source Sans Pro', sans-serif;
+	
 }
+@import url("linha.css");
+
 html {
 	font-size: 62.5%; /* Corrects text resizing oddly in IE6/7 when body font-size is set using em units http://clagnut.com/blog/348/#c790 */
 	overflow-y: scroll; /* Keeps page centred in all browsers regardless of content height */
 	-webkit-text-size-adjust: 100%; /* Prevents iOS text size adjust after orientation change, without disabling user zoom */
 	-ms-text-size-adjust: 100%; /* www.456bereastreet.com/archive/201012/controlling_text_size_in_safari_for_ios_without_disabling_user_zoom/ */
 }
-body {
+.page-template-page-loja-php {
 	background: #fff;
 }
 
@@ -55,24 +60,7 @@ body {
 	margin: 0 auto;
 	position: relative;
 }
-h1, h2, h3, h4, h5, h6 {
-	font-family: 'Open Sans', sans-serif;
-	margin: 0;
-	font-weight:normal;
-	margin: 0 0 10px 0;
-}
-h1 {
-	font-size:28px;
-}
-h2 {
-	font-size:24px;
-}
-h3 {
-	font-size:22px;
-}
-h4, h5, h6 {
-	font-size:20px;
-}
+
 
 /*
 Site =================================================================
@@ -84,12 +72,12 @@ Site =================================================================
 }
 
 .site-header {
-	margin: 40px 0 0 0;
+	margin: 50px 0 0 0;
 }
 
 #logo-site {
-	width: 300px;
-	height: 102px;
+	width: 327px;
+	height: 111px;
 	background: url(images/logo-site.png) no-repeat;
 	float: left;
 }
@@ -101,10 +89,10 @@ Site =================================================================
 }
 
 #ilustra-site {
-	width: 700px;
-	height: 305px;
+	width: 939px;
+	height: 409px;
 	background: url(images/ilustra-site.png) no-repeat;
-	margin: 15px auto 0 auto;
+	margin: 20px 0 0 0;
 }
 
 
@@ -123,19 +111,18 @@ Site =================================================================
 .navigation-main-site ul {
 	list-style: none;
 	padding-left: 0;
-	margin: 10px 0 0 40px;
+	margin: 10px 0 0 100px;
 }
 .navigation-main-site li {
 	float: left;
 	position: relative;
 }
 .navigation-main-site a {
-	font-family: 'Open Sans', sans-serif;
-	font-size: 14px;
+	font-size: 15px;
 	display: block;
 	color: #555 !important;
 	text-decoration: none;
-	padding: 8px 8px;
+	padding: 10px 10px;
 }
 .navigation-main-site ul ul {
 	-webkit-box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
@@ -173,11 +160,10 @@ Site =================================================================
 
 
 #content-intro {
-	width: 700px;
+	width: 550px;
+	float: right;
 	background: url(images/aspas.png) no-repeat left top;
-	margin: 0 auto 0 auto;
 	padding: 20px 0 0 90px;
-	font-family: 'Open Sans', sans-serif;
 }
 
 
@@ -197,29 +183,6 @@ Quem Somos ================================================================
 	margin: 0 0 0 20px;
 	float: left;
 	height: auto;
-}
-
-/*
-Contato ================================================================
-===========================================================================
-*/
-
-#esquerda-contato {
-	width: 400px;
-	float: left;
-	height: auto;
-}
-
-#direita-contato {
-	width: 540px;
-	margin: 0 0 0 20px;
-	float: left;
-	height: auto;
-}
-
-.contact-form label {
-	font-weight: normal !important;
-	font-family: 'Open Sans', sans-serif;
 }
 
 
@@ -247,6 +210,7 @@ Blog ======================================================================
 	background: url(images/logo-blog.png) center top no-repeat transparent;
 	margin: 20px 0 0 0;
 }
+
 .a-logo-blog {
 	width: 446px;
 	height: 126px;
@@ -256,7 +220,7 @@ Blog ======================================================================
 #ilustra-blog {
     background: url("images/ilustra-blog.png") no-repeat scroll center top transparent;
     height: 245px;
-    margin: 21px 0 0 500px;
+    margin: 40px 0 0 500px;
     position: absolute;
     width: 570px;
 	z-index: 2;
@@ -271,7 +235,9 @@ Main ======================================================================
 ===========================================================================
 */
 
-#main {	margin: 40px 0 0 0; }
+#main {
+	margin: 40px 0 40px 0;
+}
 
 #primary {
 	/*width: auto; */
@@ -302,6 +268,7 @@ Main ======================================================================
 	font-size: 0.9em;
 	float: right;
 	margin: 0 10px 0 0;
+	font-weight: 500;
 }
 
 #secondary {
@@ -360,6 +327,7 @@ Main ======================================================================
 
 .title-blog {
 	font-size: 3.8em;
+	font-weight: 100;
 	letter-spacing: -5px;
 	line-height: 90%;
 }
@@ -391,19 +359,14 @@ Main ======================================================================
 }
 
 .widget-title {
-	font-family: 'Open Sans', sans-serif;
+	font-family: 'Quicksand', sans-serif;
 	font-size: 18px;
-	margin: 20px 0 10px 0;
+	margin: 0 0 10px;
 	color: #e6462a; /* Vermelho Coral */
-	text-transform: uppercase;
 }
 
 .menu-paginas-container {
 	background: #FFF;
-}
-
-.menu-paginas-container a {
-	text-transform: uppercase;
 }
 
 .widget_nav_menu ul {
@@ -418,7 +381,6 @@ Main ======================================================================
 }
 
 .widget_nav_menu ul li a {
-	font-family: 'Open Sans', sans-serif;
 	color: #666;
 	width: 100%;
 	display: block;
@@ -433,14 +395,8 @@ Main ======================================================================
 	background-color: #f1f1f1;
 }
 
-.page-title {
-	font-family: 'Open Sans',sans-serif;
-	font-weight: 300;
-	text-transform: uppercase;
-}
-
 /*
-Pr� Footer ======================================================================
+Pré Footer ======================================================================
 ===========================================================================
 */
 
@@ -453,48 +409,27 @@ Pr� Footer ===================================================================
 
 .titulo-pre-footer {
 	width: 100%;
+	height: 70px;
 	overflow: hidden;
 	text-align: center;
-	vertical-align: middle;
-	background-color: #FFF;
-	z-index: 9999999999999;
-	position: absolute;
 }
 
 #pre-footer h2 a {
-    color: #555;
-    display: block;
-    font-family: 'Open Sans',sans-serif;
-    font-size: 0.8em;
-    font-weight: 300;
-    line-height: 100%;
-    margin: 12px 0 0;
-    text-decoration: none;
-    text-transform: uppercase;
+	font-size: 1.2em;
+	line-height: 100%;
+	color: #333;
+	text-decoration: none;
+	text-transform: uppercase;
+	margin: 14px 0 0 0;
+	display: block;
 }
 
 .cada-pre-footer {
 	width: 220px;
-	height: 460px;
+	height: 400px;
 	float: left;
 	overflow: hidden;
 	margin: 0 20px 0 0;
-	position: relative;
-}
-
-.cada-pre-footer:hover {
-	/* background: #f5f5f5; */
-}
-
-.cat-thumb-footer {
-	overflow: hidden;
-	width: 100%;
-	text-align: center;
-}
-
-.cat-thumb-footer a {
-	color: #999;
-	font-size: 11px;
 }
 
 .pre-final {
@@ -505,30 +440,12 @@ Pr� Footer ===================================================================
 	width: 220px;
 	height: 350px;
 	overflow: hidden;
-	margin-top: 80px;
 }
 
 #bg-pre-footer {
 	width: 100%;
-	height: 540px;
+	height: 500px;
 	background: #999;
-}
-
-.nav-previous a {
-	padding: 15px;
-	float: left;
-	margin-top: -50px;
-}
-
-.nav-previous a:hover, .nav-next a:hover {
-	background: #666;
-	color: #FFF;
-}
-
-.nav-next a {
-	padding: 15px;
-	float: right;
-	margin-top: -50px;
 }
 
 /*
@@ -536,37 +453,30 @@ Footer ======================================================================
 ===========================================================================
 */
 
-#wpstats { display: none; }
-
 #rodape {
-	font-family: 'Open Sans', sans-serif;
-	font-size: 14px;
 	height: 80px;
 	width: 100%;
 	color: #ccc;
+	margin: 0 auto;
 }
 
 .site-info-rodape {
-	width: 800px;
+	width: 600px;
 	float: left;
-	margin: 37px auto 0 auto;
+	margin: 25px auto 0 auto;
 }
 
 #colophon {
-	background: url(images/sombras.png) no-repeat top center;
-	height: 90px;
+	height: 80px;
 	width: 100%;
 	color: #666;
-	padding: 20px 0 0 0;
-	margin: 20px auto 0 auto;
+	margin: 0 auto;
 }
 
 .site-info {
-	font-family: 'Open Sans', sans-serif;
-	font-size: 14px;
 	width: auto;
 	text-align: center;
-	margin: 26px auto 0 auto;
+	margin: 25px auto 0 auto;
 }
 
 #brasa {
@@ -574,19 +484,13 @@ Footer ======================================================================
 	height: 40px;
 	background: url(images/mini-logo-brasa.png) no-repeat center top;
 	float: right;
-	margin: 29px 0 0 0;
-}
-
-.a-brasa {
-	width: 60px;
-	height: 40px;
-	position: absolute;
+	margin: 20px 0 0 0;
 }
 
 #bg-footer {
-    background: url("images/bg-mini-footer.jpg") repeat-x scroll 0 bottom #FFFFFF;
-    height: 554px;
-    margin: -541px 0 0;
+background: url("images/bg-mini-footer.jpg") repeat-x scroll 0 bottom #FFFFFF;
+    height: 520px;
+    margin: -520px 0 0;
     position: absolute;
     width: 100%;
     z-index: -99;
@@ -936,7 +840,7 @@ a:active {
 ----------------------------------------------- */
 
 .navigation-main {
-	margin: 68px 0 0 0;
+	margin: 53px 0 0 -70px;
 	clear: both;
 	display: block;
 	float: left;
@@ -948,23 +852,16 @@ a:active {
 .navigation-main ul {
 	list-style: none;
 	padding-left: 0;
-	margin: 10px 0 0 80px;
+	margin: 10px 0 0 100px;
 }
 .navigation-main li {
 	float: left;
 	position: relative;
-	padding-left: 15px;
-	border-right: 1px solid #F99;
 }
 .navigation-main a {
-	font-family: 'Open Sans', sans-serif;
 	font-size: 15px;
 	display: block;
 	text-decoration: none;
-}
-
-li.last_item {
-	border: none !important;
 }
 .navigation-main ul ul {
 	-webkit-box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
@@ -1010,18 +907,17 @@ Menu Blog =================================================================
 }
 
 #site-navigation .menu-categorias-container a {
-	font-family: 'Open Sans', sans-serif;
-	color: #FFF;
-	margin: 0 15px 0 0;
+	color: #FFfffF;
+	margin: 0 10px 0 0;
 }
 
 #site-navigation .menu-categorias-container a:hover {
-	color: #FCC;
+	color: #f5f5f5;
 }
 
 #bg-menu-blog {
 	width: 100%;
-	height: 55px;
+	height: 45px;
 	background: #e6462a; /* Vermelho Coral */
 	position: absolute;
 	margin: 250px 0 0 0;
@@ -1197,25 +1093,6 @@ object {
 	display: none;
 }
 
-.pins-feed-list {
-	background: #FFF;
-}
-
-.nailthumb-container {
-	margin: 0 !important;
-}
-
-li.pins-feed-item {
-	margin: 2px !important;
-}
-
-#pins-feed-follow {
-    padding: 10px 0 0 0 !important;
-    text-align: left !important;
-    width: auto !important;
-}
-
-
 /* =Infinite Scroll
 ----------------------------------------------- */
 
@@ -1234,10 +1111,4 @@ li.pins-feed-item {
 	width: 660px;
 	color: #777;
 	margin: 20px auto 0 auto;
-}
-
-/* Shortcode Center */
-.center {
-	text-align: center;
-	margin: 0 auto;
 }

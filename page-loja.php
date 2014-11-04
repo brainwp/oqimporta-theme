@@ -19,20 +19,14 @@ get_header('loja'); ?>
 					</li>
 				</ul>
 			</div>
-			<?php
-			wp_nav_menu( array(
-	            'theme_location' => 'loja_categorias',
-	            'depth' => 2,
-	            'container' => 'div',
-				'container_class' => 'inline-block col-sm-3 sem-margem',
-				'container_id'    => 'menu-categoria',
-				'menu_class'      => '',
-				'menu_id'         => '',	
-	            'menu_class' => 'nav navbar-nav',
-	            'fallback_cb' => 'wp_page_menu',
-	        ));
-	?>
-			
+			<div id="menu-categoria" class="inline-block col-sm-3 sem-margem">
+				<ul>
+					<li><a href="#">Acessórios</a></li>
+					<li><a href="#">Brincos</a></li>
+					<li><a href="#">Colares</a></li>
+					<li><a href="#">Outlet</a></li>
+				</ul>
+			</div>
 			<div class="clearfix"></div>
 		</div><!--slider row-->
 	</div><!--meio-->	

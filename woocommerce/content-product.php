@@ -8,7 +8,7 @@
  * @package 	WooCommerce/Templates
  * @version     1.6.4
  */
-
+echo $woocommerce_loop;
 if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 
 global $product, $woocommerce_loop;
@@ -60,11 +60,21 @@ if ( 0 == $woocommerce_loop['loop'] % $woocommerce_loop['columns'] )
 			 * @hooked woocommerce_show_product_loop_sale_flash - 10
 			 * @hooked woocommerce_template_loop_product_thumbnail - 10
 			 */
-		
+			if($woocommerce_loop['loop'] == 5):
+			    remove_action( 'woocommerce_before_shop_loop_item_title', 'woocommerce_template_loop_product_thumbnail', 10 );
+				$attachment_ids = $product->get_gallery_attachment_ids();
+				$attachment_id = $attachment_ids[0];
+				$image       = wp_get_attachment_image( $attachment_id, 'duplo' );
+				echo $image;
+			
+			else:
+			    add_action( 'woocommerce_before_shop_loop_item_title', 'woocommerce_template_loop_product_thumbnail', 10 );
+			
 			do_action( 'woocommerce_before_shop_loop_item_title' );
+		endif;
 		?>
 			<h5 class="	<?php if($woocommerce_loop['loop'] == 5):
-					echo "destaque-produto"; endif;?>"><?php the_title(); ?></h5>
+							echo "destaque-produto"; endif;?>"><?php the_title(); ?></h5>
 
 		<?php
 			/**

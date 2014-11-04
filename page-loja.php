@@ -39,7 +39,7 @@ get_header('loja'); ?>
 				<?php
 					$args = array(
 						'post_type' => 'product',
-						'posts_per_page' => 10
+						'posts_per_page' => 8
 						);
 					$loop = new WP_Query( $args );
 					if ( $loop->have_posts() ) {

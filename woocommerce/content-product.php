@@ -73,8 +73,8 @@ if ( 0 == $woocommerce_loop['loop'] % $woocommerce_loop['columns'] )
 			do_action( 'woocommerce_before_shop_loop_item_title' );
 		endif;
 		?>
-			<h5 class="	<?php if($woocommerce_loop['loop'] == 5):
-							echo "destaque-produto"; endif;?>"><?php the_title(); ?></h5>
+			<div class="h5-produto" ><h5 class="	<?php if($woocommerce_loop['loop'] == 5):
+							echo "destaque-produto"; endif;?>"><?php the_title(); ?></h5></div>
 
 		<?php
 			/**

@@ -41,7 +41,6 @@ html .sem-margem{
 }
 .page-template-page-loja-php, .single-product {
  	padding-top: 80px;
-	min-height:3000px 
 	}
 #container-menu-loja{
 	max-width: 1020px;
@@ -58,7 +57,7 @@ html .sem-margem{
 }
 #meio, #antes, #depois{
 	background-color:#ece7d9;
-	min-height:600px;
+	min-height: 540px;
 }
 .shopping-title{
 	padding:35px 0;
@@ -168,27 +167,16 @@ glyphicon-plus:before:hover{
 	background:transparent;
 	
 }
-.duplo .enrolador-produto h5{
+.duplo .enrolador-produto .h5-produto{
 	position: relative;
-	top: -45px;
+	top: -60px;
 	background-color: #000000;
 	width: 95%;
 	left: 32px;
-	 -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=80)";
-
-	  /* IE 5-7 */
-	  filter: alpha(opacity=100);
-
-	  /* Netscape */
-	  -moz-opacity: 1;
-
-	  /* Safari 1.x */
-	  -khtml-opacity:1;
-
-	  /* Good browsers */
-	  opacity: 1;
+	 
 	
 }
+
 li.duplo img{
 	max-width:629px;
 	max-height:345px;
@@ -205,6 +193,10 @@ li.duplo img{
 .products img{
 	padding:0;
 }
+.products li{
+	padding-left:10px;
+}
+
 #imagem-post-destaque{
 	padding:0;
 }
@@ -212,13 +204,13 @@ li.duplo img{
 	background: black;
 	max-width: 289px;
 	font-weight:lighter;
-	
-	
 }
+
 .enrolador-produto h5{
 	padding: 25px;
 	display:inline-block;
 	font-weight:lighter;
+	margin:0;
 	-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=80)";
 
 	  /* IE 5-7 */
@@ -235,10 +227,15 @@ li.duplo img{
 	
 	
 }
+.enrolador-produto .price:after{
+	content:',';
+}
 .enrolador-produto .price{
 	display:inline-block;
 	float:right;
 	margin:0;
+	top: -65px;
+	position:relative;
 	padding: 22px 10px;
 	-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=80)";
 
@@ -254,6 +251,9 @@ li.duplo img{
 	  /* Good browsers */
 	  opacity: 0.8;
 }
+.button.product_type_simple{
+	display:none;
+}
 
 
 
@@ -268,7 +268,12 @@ li.duplo img{
 
 
 
-
+@media screen and (max-width: 950px) {
+	#meio, #antes, #depois{
+		background-color:#ece7d9;
+		min-height: 450px;
+	}
+}
 @media screen and (max-width: 767px) {
 	#antes, #depois{
 		display:none;}
@@ -294,11 +299,31 @@ li.duplo img{
 	display: block;
 	max-width:289px;
 	}
+	#menu-categoria {
+
+	height: initial;
+	}
 }
+
 @media screen and (max-width: 500px) {
 	#menu-categoria ul li{
 		font-size:0.6em;
 	}
+	#menu-menu-da-loja{
+		width:60%;
+	}
+	.h5-produto{
+		position: relative;
+		top: 0;
+		background-color: initial;
+		width: 100%;
+		left: 0;
+	}
+	.enrolador-produto, .enrolador-produto.sem-margem {
+		margin-bottom: 68px;
+		
+	}
+	
 }
 	
 	

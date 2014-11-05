@@ -1236,8 +1236,47 @@ li.pins-feed-item {
 	margin: 20px auto 0 auto;
 }
 
-/* Shortcode Center */
+/* Shortcode BRASA CSS */
 .center {
 	text-align: center;
 	margin: 0 auto;
 }
+
+.zilla-toggle {
+display: block;
+background: #c5c5c5;
+cursor: pointer;
+outline: none;
+position: relative;
+-webkit-border-radius: 5px;
+-moz-border-radius: 5px;
+border-radius: 5px;
+}
+
+.zilla-toggle-inner {
+background: none repeat scroll 0 0 #e5e5e5;
+color: #555;
+font-family: 'Open Sans',sans-serif;
+line-height: 1.8em;
+padding: 0 0 0 3.7em;
+}
+
+.zilla-toggle h3 {
+font-size: 22px;
+}
+
+.zilla-toggle h1, .zilla-toggle h2, .zilla-toggle h3, .zilla-toggle h4, .zilla-toggle h5, .zilla-toggle h6 {
+font-family: 'Open Sans',sans-serif;
+margin: 0 0 10px 0;
+font-weight: normal;
+}
+
+.zilla-toggle-inner p {
+font-size: 0.9em;
+line-height: 1.8em;
+}
+
+a.zilla-button, a.zilla-button:visited {
+font-family: 'Open Sans',sans-serif;
+}
+

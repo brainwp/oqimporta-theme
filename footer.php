@@ -15,7 +15,9 @@
 			<?php do_action( 'oqimporta_credits' ); ?>
 			<?php bloginfo('name'); ?>
 			<span class="sep"> | </span>
-			Todos os Direitos Reservados <?php the_date('Y'); ?>
+            <?php bloginfo( 'description' ); ?>
+			<span class="sep"> | </span>
+			Todos os Direitos Reservados <?php echo date('Y'); ?>
 		</div><!-- .site-info -->
 	</footer><!-- #colophon -->
 </div><!-- #page -->

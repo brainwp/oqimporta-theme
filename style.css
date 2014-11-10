@@ -1236,8 +1236,89 @@ li.pins-feed-item {
 	margin: 20px auto 0 auto;
 }
 
+<<<<<<< HEAD
 /* Shortcode Center */
+=======
+/* Shortcode BRASA CSS */
+>>>>>>> master
 .center {
 	text-align: center;
 	margin: 0 auto;
 }
+<<<<<<< HEAD
+=======
+
+.zilla-toggle {
+background: none repeat scroll 0 0 #c5c5c5 !important;
+display: block;
+cursor: pointer;
+outline: none !important;
+position: relative;
+-webkit-border-radius: 5px !important;
+-moz-border-radius: 5px !important;
+border-radius: 5px !important;
+border: none !important;
+}
+
+
+.zilla-toggle span.ui-icon {
+background: url(images/toggle-closed.png) no-repeat;
+width: 30px;
+height: 30px;
+position: absolute;
+top: 33%;
+left: 10px;
+margin: -6px 0 0 0;
+margin-top: -6px !important;
+}
+
+.zilla-toggle .ui-state-active .ui-icon {
+background: url(images/toggle-open.png) no-repeat;
+}
+
+.zilla-toggle-title {
+background: none repeat scroll 0 0 #c5c5c5 !important;
+margin-top: 2px;
+color: #555 !important;
+display: block;
+font-family: 'Open Sans',sans-serif !important;
+font-size: 1.6em !important;
+font-weight: 300 !important;
+outline: medium none;
+padding: 10px 10px 15px 50px !important;
+text-transform: uppercase;
+position: relative;
+}
+
+
+.zilla-toggle-inner {
+background: none repeat scroll 0 0 #e5e5e5 !important;
+color: #555;
+font-family: 'Open Sans',sans-serif !important;
+line-height: 1.8em;
+padding: 0 0 0 3.7em;
+-webkit-border-radius: none !important;
+-moz-border-radius: none !important;
+border-radius: none !important;
+}
+
+.zilla-toggle h3 {
+font-size: 22px !important;
+}
+
+.zilla-toggle h1, .zilla-toggle h2, .zilla-toggle h3, .zilla-toggle h4, .zilla-toggle h5, .zilla-toggle h6 {
+font-family: 'Open Sans',sans-serif !important;
+margin: 0 0 10px 0;
+font-weight: normal;
+}
+
+.zilla-toggle-inner p {
+font-size: 0.9em;
+line-height: 1.8em;
+}
+
+a.zilla-button, a.zilla-button:visited {
+font-family: 'Open Sans',sans-serif !important;
+}
+
+>>>>>>> master

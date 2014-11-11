@@ -667,6 +667,11 @@ html #myCarousel .carousel-control{
 		width: 100%;
 		
 	}
+	.h5-produto h5 {
+	max-width: 74%;
+	font-size: 0.8em;
+	}
+
 	#menu-categoria a {
 	
 	padding: 0px;

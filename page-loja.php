@@ -2,9 +2,8 @@
 /** Template Name: Loja */
 
 get_header('loja'); ?>
-		
-	<div id="antes" class="sem-margem col-sm-1 antes"></div>
-	<div id="meio" class="site-main sem-margem col-sm-9">
+	<div id="container-header" >	
+		<div id="meio" class="site-main col-sm-10">
 		<div class="clearfix"></div>
 		<div class=" shopping-title">
 			<img src="<?php echo get_template_directory_uri();?>/images/shopping.png">
@@ -20,20 +19,21 @@ get_header('loja'); ?>
 				</ul>
 			</div>
 			<div id="menu-categoria" class="inline-block col-sm-3 sem-margem">
-				<ul>
-					<li><a href="#">Acessórios</a></li>
-					<li><a href="#">Brincos</a></li>
-					<li><a href="#">Colares</a></li>
-					<li><a href="#">Outlet</a></li>
-				</ul>
-			</div>
+			
+				<?php
+				wp_nav_menu( array(
+		            'theme_location' => 'loja_categorias',
+		            'container' => false,	
+		            'menu_class' => 'nav navbar-nav',
+		        ));
+				?>
+				</div><!---#menu-categoria-->
 			<div class="clearfix"></div>
 		</div><!--slider row-->
 	</div><!--meio-->	
-	<div id="depois" class="sem-margem col-sm-2 depois"></div>
+	</div><!--container header-->
 	<div class="clearfix"></div>
-	<div id="content-antes" class="col-sm-1 sem-margem"></div>
-	<div id="content" class="sem-margem site-content col-sm-9" role="main">
+	<div id="content" class="sem-margem site-content col-sm-10" role="main">
 	
 			<ul class="products">
 				<?php
@@ -45,6 +45,8 @@ get_header('loja'); ?>
 					if ( $loop->have_posts() ) {
 						while ( $loop->have_posts() ) : $loop->the_post();
 							woocommerce_get_template_part( 'content', 'product' );
+							if($woocommerce_loop['loop'] == 3 || $woocommerce_loop['loop'] == 5 || $woocommerce_loop['loop'] == 8 || $woocommerce_loop['loop'] == 11):
+ 									echo "<div class='clearfix'></div>"; endif;
 						endwhile;
 					} else {
 						echo __( 'No products found' );
@@ -54,7 +56,6 @@ get_header('loja'); ?>
 			</ul><!--/.products-->
 
 		</div><!-- #content -->
-		<div id="content-depois" class="col-sm-2 sem-margem"></div>
 		
 		
 <?php get_footer('loja'); ?>

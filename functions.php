@@ -65,12 +65,14 @@ function oqimporta_setup() {
 	register_nav_menus( array(
 		'primary' => __( 'Menu Blog', 'oqimporta' ),
 		'loja'=>__( 'Menu Loja', 'oqimporta' ),
-		'loja_categorias'=>__( 'Menu Categorias da Loja', 'oqimporta' )
+		'loja_categorias'=>__( 'Menu Categorias da Loja', 'oqimporta' ),
+		'secundary' => __( 'Menu Site', 'oqimporta' ),
+		'footer_loja' => __('Menu footer', 'oqimport')
+		
 		)
 	);
 		
 	register_nav_menus( array(
-		'secundary' => __( 'Menu Site', 'oqimporta' ),
 		)
 	);
 
@@ -209,6 +211,44 @@ function load_fonts() {
 	require_once('bootstrap/wp_bootstrap_navwalker.php');
  ///////////////////////////////////////////////////////////////////
  //////////////////////adiciona tamanho para op quinto produto///////////////////////////////////	
-  add_image_size('duplo', 520, 250, TRUE);
+  add_image_size('duplo', 629, 345, TRUE);
  ///////////////////////////////////////////////////////////////////
- ///////////////////////////////////////////////////////////////////
+ //////////////////widget area do footer///////////////////////////////////
+
+function rodape_sociais() {
+
+	register_sidebar( array(
+		'name' => 'Redes sociais do rodapé',
+		'id' => 'rodape_sociais_wid',
+		'before_widget' => '<div>',
+		'after_widget' => '</div>',
+		'before_title' => '',
+		'after_title' => '',
+	) );
+}
+add_action( 'widgets_init', 'rodape_sociais' );
+///////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////
+/**
+ * WooCommerce Extra Feature
+ * --------------------------
+ *
+ * Change number of related products on product page
+ * Set your own value for 'posts_per_page'
+ *
+ */ 
+function woo_related_products_limit() {
+  global $product;
+	
+	$args['posts_per_page'] = 4;
+	return $args;
+}
+add_filter( 'woocommerce_output_related_products_args', 'jk_related_products_args' );
+  function jk_related_products_args( $args ) {
+ 
+	$args['posts_per_page'] = 4; // 4 related products
+	$args['columns'] = 4; // arranged in 2 columns
+	return $args;
+}
+///////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////

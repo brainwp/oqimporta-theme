@@ -9,16 +9,20 @@
 ?>
 
 	</div><!-- #main -->
-    
-    
 
 	<footer id="rodape" class="site-footer" role="contentinfo">
-		<div class="site-info-rodape quicksand">
-			<?php bloginfo( 'description' ); ?>
+		<div class="site-info-rodape">
+
 			<?php do_action( 'oqimporta_credits' ); ?>
+			<?php bloginfo('name'); ?>
+			<span class="sep"> | </span>
+            <?php bloginfo( 'description' ); ?>
+			<span class="sep"> | </span>
+			Todos os Direitos Reservados <?php echo date('Y'); ?>
+
 		</div><!-- .site-info-rodape -->
-        
         <div id="brasa">
+        <a class="a-brasa" href="http://www.brasa.art.br" target="_blank"></a>
         </div><!-- #brasa -->
         
 	</footer><!-- #rodape -->

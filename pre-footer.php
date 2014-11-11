@@ -10,18 +10,21 @@
 
         <div class="<?php echo $pre_class; ?>">
         <div class="titulo-pre-footer">
-        <h2><a class="quicksand" href="<?php the_permalink() ?>"><?php the_title(); ?></a></h2>
-        </div>
+        	<h2><a href="<?php the_permalink() ?>"><?php the_title(); ?></a></h2>
+        </div><!-- .titulo-pre-footer -->
         <div class="thumb-pre-footer">
-            <?php if ( has_post_thumbnail() ) {
+            <a href="<?php the_permalink() ?>">
+			<?php if ( has_post_thumbnail() ) {
             the_post_thumbnail( 'pre' );
             } else { ?>
             <img src="<?php bloginfo('stylesheet_directory'); ?>/images/thumb-default.jpg" alt="<?php the_title(); ?>" />
             <?php } ?>
-
+            </a>
         </div><!-- .thumb-pre-footer -->
 
-        <p><?php the_category(', '); ?> <?php comments_popup_link('No comments yet', '1 comment so far', '% comments so far (is that a lot?)', 'comments-link', 'Comments are off for this post'); ?></p>
+        <div class="cat-thumb-footer">
+        	<p><?php the_category(', '); ?></p>
+		</div>
         </div><!-- .<?php echo $pre_class; ?> -->
 
         <?php endwhile; ?>

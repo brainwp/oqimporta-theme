@@ -65,12 +65,14 @@ function oqimporta_setup() {
 	register_nav_menus( array(
 		'primary' => __( 'Menu Blog', 'oqimporta' ),
 		'loja'=>__( 'Menu Loja', 'oqimporta' ),
-		'loja_categorias'=>__( 'Menu Categorias da Loja', 'oqimporta' )
+		'loja_categorias'=>__( 'Menu Categorias da Loja', 'oqimporta' ),
+		'secundary' => __( 'Menu Site', 'oqimporta' ),
+		'footer_loja' => __('Menu footer', 'oqimport')
+		
 		)
 	);
 		
 	register_nav_menus( array(
-		'secundary' => __( 'Menu Site', 'oqimporta' ),
 		)
 	);
 
@@ -142,13 +144,15 @@ function oqimporta_scripts() {
 
 	wp_enqueue_style( 'bootstrap-css' );
 	/////////bootstrap/////////
-	/////////bootstrap/////////
+	
+
 	
 	
 	wp_enqueue_style( 'style', get_stylesheet_uri() );
+
 	wp_enqueue_script( 'navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20120206', true );
+
 	wp_enqueue_script( 'skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20130115', true );
-	wp_enqueue_script( 'menu-scroll', get_template_directory_uri() . '/js/menu-scroll.js', array( 'jquery' ) );
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
@@ -180,7 +184,6 @@ function filter_oqimporta( $content ) {
 }
 
 add_filter( 'the_content', 'filter_oqimporta' );
-
 ///////////////////////////////////////////////////////////////////
 //////////livrando o style de uma linha muito comprida para editar ele melhor
 /**
@@ -209,38 +212,105 @@ function load_fonts() {
 	require_once('bootstrap/wp_bootstrap_navwalker.php');
  ///////////////////////////////////////////////////////////////////
  //////////////////////adiciona tamanho para op quinto produto///////////////////////////////////	
-  add_image_size('duplo', 520, 250, TRUE);
+  add_image_size('duplo', 629, 345, TRUE);
  ///////////////////////////////////////////////////////////////////
- ///////////////////////////////////////////////////////////////////
+ //////////////////widget area do footer///////////////////////////////////
 
+function rodape_sociais() {
 
-
-/* Add last_item class to last li in wp_nav_menu lists*/
-function add_last_item_class($strHTML) {
-	$intPos = strripos($strHTML,'menu-item');
-	printf("%s last_item %s",
-		substr($strHTML,0,$intPos),
-		substr($strHTML,$intPos,strlen($strHTML))
-	);
+	register_sidebar( array(
+		'name' => 'Redes sociais do rodapé',
+		'id' => 'rodape_sociais_wid',
+		'before_widget' => '<div>',
+		'after_widget' => '</div>',
+		'before_title' => '',
+		'after_title' => '',
+	) );
 }
-add_filter('wp_nav_menu','add_last_item_class');
-
-
-function shortcode_center($atts, $content = null){
-     return '<div class="center">' . $content . '</div>';
-   }
-add_shortcode('center', 'shortcode_center');
-
-// Custom login
-function my_custom_login_logo() {
-    echo '<style type="text/css">
-        h1 a { background-image:url('.get_bloginfo('stylesheet_directory').'/images/logo-admin-oqimporta.png) !important; }
-		body { background-image:url('.get_bloginfo('stylesheet_directory').'/images/bg-geral.jpg) !important; }
-		.login #nav a, .login #backtoblog a { color: #b20000 !important;}
-    </style>';
+add_action( 'widgets_init', 'rodape_sociais' );
+///////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////
+/**
+ * WooCommerce Extra Feature
+ * --------------------------
+ *
+ * Change number of related products on product page
+ * Set your own value for 'posts_per_page'
+ *
+ */ 
+function woo_related_products_limit() {
+  global $product;
+	
+	$args['posts_per_page'] = 4;
+	return $args;
 }
+add_filter( 'woocommerce_output_related_products_args', 'jk_related_products_args' );
+  function jk_related_products_args( $args ) {
+ 
+	$args['posts_per_page'] = 4; // 4 related products
+	$args['columns'] = 4; // arranged in 2 columns
+	return $args;
+}
+///////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////
+function custom_pagination($numpages = '', $pagerange = '', $paged='') {
+ 
+  if (empty($pagerange)) {
+    $pagerange = 2;
+  }
+ 
+  /**
+   * This first part of our function is a fallback
+   * for custom pagination inside a regular loop that
+   * uses the global $paged and global $wp_query variables.
+   * 
+   * It's good because we can now override default pagination
+   * in our theme, and use this function in default quries
+   * and custom queries.
+   */
+  global $paged;
+  if (empty($paged)) {
+    $paged = 1;
+  }
+  if ($numpages == '') {
+    global $wp_query;
+    $numpages = $wp_query->max_num_pages;
+    if(!$numpages) {
+        $numpages = 1;
+    }
+  }
+ 
+  /** 
+   * We construct the pagination arguments to enter into our paginate_links
+   * function. 
+   */
+  $pagination_args = array(
+    'base'            => get_pagenum_link(1) . '%_%',
+    'format'          => 'page/%#%',
+    'total'           => $numpages,
+    'current'         => $paged,
+    'show_all'        => False,
+    'end_size'        => 1,
+    'mid_size'        => $pagerange,
+    'prev_next'       => True,
+    'prev_text'       => __('&laquo;'),
+    'next_text'       => __('&raquo;'),
+    'type'            => 'plain',
+    'add_args'        => false,
+    'add_fragment'    => ''
+  );
 
-add_action('login_head', 'my_custom_login_logo');
+  $paginate_links = paginate_links($pagination_args);
+  
+  if ($paginate_links) {
+    echo "<nav class='custom-pagination'>";
+      // echo "<span class='page-numbers page-num'>". $paged . " / " . $numpages . "</span> ";
+      echo $paginate_links;
+    echo "</nav>";
+  }
+ 
+}
+////////////////////////////////////////////////////////////////////////////////////////////////
+	add_filter('show_admin_bar', '__return_false');
 
-// Ocultando Admin Bar
-add_filter('show_admin_bar', '__return_false');
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////

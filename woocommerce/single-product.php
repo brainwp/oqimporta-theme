@@ -12,7 +12,9 @@
 if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 
 get_header( 'loja' ); ?>
-
+<div class=" shopping-title">
+	<img src="<?php echo get_template_directory_uri();?>/images/shopping.png">
+</div>
 	<?php
 		/**
 		 * woocommerce_before_main_content hook
@@ -38,13 +40,7 @@ get_header( 'loja' ); ?>
 		do_action( 'woocommerce_after_main_content' );
 	?>
 
-	<?php
-		/**
-		 * woocommerce_sidebar hook
-		 *
-		 * @hooked woocommerce_get_sidebar - 10
-		 */
-		do_action( 'woocommerce_sidebar' );
-	?>
+	
+	<div class="clearfix"></div>
 
 <?php get_footer( 'loja' ); ?>

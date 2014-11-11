@@ -2,50 +2,60 @@
 /** Template Name: Loja */
 
 get_header('loja'); ?>
-		
-	<div id="antes" class="sem-margem col-sm-1 antes"></div>
-	<div id="meio" class="site-main sem-margem col-sm-9">
+	<div id="container-header" >	
+		<div id="meio" class="site-main col-sm-10">
 		<div class="clearfix"></div>
 		<div class=" shopping-title">
 			<img src="<?php echo get_template_directory_uri();?>/images/shopping.png">
 		</div><!-- shopping-title-->
 		<div class=" slider">
 			<div id="slider" class="inline-block col-sm-8 sem-margem">
-				<?php get_template_part('loop','slider')?>
-				<ul id="lista-slider"class="sem-margem">
-					<li class="" >
-						<div id="imagem-destaque"><img  src="<?php echo get_template_directory_uri();?>/images/imagem-slider.jpg"></div>
-						<div id="titulo-destaque"><h3>Nome do destaque do slider na Home</h3></div>
-					</li>
-				</ul>
+				<?php include('slider-loja.php'); ?>
 			</div>
 			<div id="menu-categoria" class="inline-block col-sm-3 sem-margem">
-				<ul>
-					<li><a href="#">Acessórios</a></li>
-					<li><a href="#">Brincos</a></li>
-					<li><a href="#">Colares</a></li>
-					<li><a href="#">Outlet</a></li>
-				</ul>
-			</div>
+			
+				<?php
+				wp_nav_menu( array(
+		            'theme_location' => 'loja_categorias',
+		            'container' => false,	
+		            'menu_class' => 'nav navbar-nav',
+		        ));
+				?>
+				</div><!---#menu-categoria-->
 			<div class="clearfix"></div>
 		</div><!--slider row-->
 	</div><!--meio-->	
-	<div id="depois" class="sem-margem col-sm-2 depois"></div>
+	</div><!--container header-->
 	<div class="clearfix"></div>
-	<div id="content-antes" class="col-sm-1 sem-margem"></div>
-	<div id="content" class="sem-margem site-content col-sm-9" role="main">
+	<div id="content" class="sem-margem site-content col-sm-10" role="main">
 	
 			<ul class="products">
 				<?php
 					$args = array(
 						'post_type' => 'product',
-						'posts_per_page' => 8
+						'posts_per_page' => 8,
+						'paged' => $paged
+					    
 						);
 					$loop = new WP_Query( $args );
 					if ( $loop->have_posts() ) {
 						while ( $loop->have_posts() ) : $loop->the_post();
 							woocommerce_get_template_part( 'content', 'product' );
-						endwhile;
+							if($woocommerce_loop['loop'] == 3 || $woocommerce_loop['loop'] == 5 || $woocommerce_loop['loop'] == 8 || $woocommerce_loop['loop'] == 11):
+ 									echo "<div class='clearfix'></div>"; endif;
+						endwhile;?>
+						
+						<?php if ($loop->max_num_pages > 1) { // check if the max number of pages is greater than 1  ?>
+						<dic class="clearfix"></div>  
+							<!-- pagination here -->
+							    <?php
+							      if (function_exists(custom_pagination)) {
+							        custom_pagination($loop->max_num_pages,"",$paged);
+							      }
+							    ?>
+						<?php } ?>
+						
+					<?php 						
 					} else {
 						echo __( 'No products found' );
 					}
@@ -54,7 +64,6 @@ get_header('loja'); ?>
 			</ul><!--/.products-->
 
 		</div><!-- #content -->
-		<div id="content-depois" class="col-sm-2 sem-margem"></div>
 		
 		
 <?php get_footer('loja'); ?>

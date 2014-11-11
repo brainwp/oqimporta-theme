@@ -440,7 +440,7 @@ Main ======================================================================
 }
 
 /*
-Prï¿½ Footer ======================================================================
+Pré Footer ======================================================================
 ===========================================================================
 */
 
@@ -1236,17 +1236,11 @@ li.pins-feed-item {
 	margin: 20px auto 0 auto;
 }
 
-<<<<<<< HEAD
-/* Shortcode Center */
-=======
 /* Shortcode BRASA CSS */
->>>>>>> master
 .center {
 	text-align: center;
 	margin: 0 auto;
 }
-<<<<<<< HEAD
-=======
 
 .zilla-toggle {
 background: none repeat scroll 0 0 #c5c5c5 !important;
@@ -1321,4 +1315,3 @@ a.zilla-button, a.zilla-button:visited {
 font-family: 'Open Sans',sans-serif !important;
 }
 
->>>>>>> master

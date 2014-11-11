@@ -10,13 +10,7 @@ get_header('loja'); ?>
 		</div><!-- shopping-title-->
 		<div class=" slider">
 			<div id="slider" class="inline-block col-sm-8 sem-margem">
-				<?php get_template_part('loop','slider')?>
-				<ul id="lista-slider"class="sem-margem">
-					<li class="" >
-						<div id="imagem-destaque"><img  src="<?php echo get_template_directory_uri();?>/images/imagem-slider.jpg"></div>
-						<div id="titulo-destaque"><h3>Nome do destaque do slider na Home</h3></div>
-					</li>
-				</ul>
+				<?php include('slider-loja.php'); ?>
 			</div>
 			<div id="menu-categoria" class="inline-block col-sm-3 sem-margem">
 			
@@ -39,7 +33,9 @@ get_header('loja'); ?>
 				<?php
 					$args = array(
 						'post_type' => 'product',
-						'posts_per_page' => 8
+						'posts_per_page' => 8,
+						'paged' => $paged
+					    
 						);
 					$loop = new WP_Query( $args );
 					if ( $loop->have_posts() ) {
@@ -47,7 +43,19 @@ get_header('loja'); ?>
 							woocommerce_get_template_part( 'content', 'product' );
 							if($woocommerce_loop['loop'] == 3 || $woocommerce_loop['loop'] == 5 || $woocommerce_loop['loop'] == 8 || $woocommerce_loop['loop'] == 11):
  									echo "<div class='clearfix'></div>"; endif;
-						endwhile;
+						endwhile;?>
+						
+						<?php if ($loop->max_num_pages > 1) { // check if the max number of pages is greater than 1  ?>
+						<dic class="clearfix"></div>  
+							<!-- pagination here -->
+							    <?php
+							      if (function_exists(custom_pagination)) {
+							        custom_pagination($loop->max_num_pages,"",$paged);
+							      }
+							    ?>
+						<?php } ?>
+						
+					<?php 						
 					} else {
 						echo __( 'No products found' );
 					}

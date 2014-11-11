@@ -36,11 +36,12 @@ if ( 0 == $woocommerce_loop['loop'] % $woocommerce_loop['columns'] )
 	$classes[] = 'last';
 ?>
 <?php 
-	if($woocommerce_loop['loop'] == 5):?>
+	if($woocommerce_loop['loop'] == 5 && !is_archive() ):?>
 	<?php endif;
 ?>
 <li <?php 
-	if($woocommerce_loop['loop'] == 5):
+
+	if($woocommerce_loop['loop'] == 5 && !is_archive() ):
 		array_push($classes, "duplo","col-sm-8 ", "sem-margem");
 	else:
 		array_push($classes, "col-sm-4 ", "sem-margem");
@@ -49,10 +50,19 @@ if ( 0 == $woocommerce_loop['loop'] % $woocommerce_loop['columns'] )
 	post_class( $classes ); ?>>
 
 	<?php do_action( 'woocommerce_before_shop_loop_item' ); ?>
-	<a href="<?php the_permalink(); ?>">
+	
 		<div class="<?php 
 			if($woocommerce_loop['loop'] == 3 || $woocommerce_loop['loop'] == 5 || $woocommerce_loop['loop'] == 8 || $woocommerce_loop['loop'] == 11):
 				echo "sem-margem"; endif;?> enrolador-produto">
+				<div class="enrolador-capa" id="<?php echo($post->post_name) ?>">
+					<a  class="lupa" href="<?php echo get_permalink(  ); ?>">
+						.
+					</a>
+					<a href="/oque2/shopping/?add-to-cart=<?php echo($post->ID) ?>" rel="nofollow" data-product_id="<?php echo($post->ID) ?>" data-product_sku="" data-quantity="1" class="comprar button add_to_cart_button product_type_simple">Comprar</a> 
+				</div>
+				
+				
+				<div class="adicionado" id="adicionado-<?php echo($post->post_name) ?>">Adicionado ao Carrinho</div>
 		<?php
 			/**
 			 * woocommerce_before_shop_loop_item_title hook
@@ -60,7 +70,7 @@ if ( 0 == $woocommerce_loop['loop'] % $woocommerce_loop['columns'] )
 			 * @hooked woocommerce_show_product_loop_sale_flash - 10
 			 * @hooked woocommerce_template_loop_product_thumbnail - 10
 			 */
-			if($woocommerce_loop['loop'] == 5):
+			if($woocommerce_loop['loop'] == 5 && !is_archive() ):
 			    remove_action( 'woocommerce_before_shop_loop_item_title', 'woocommerce_template_loop_product_thumbnail', 10 );
 				$attachment_ids = $product->get_gallery_attachment_ids();
 				$attachment_id = $attachment_ids[0];
@@ -73,8 +83,8 @@ if ( 0 == $woocommerce_loop['loop'] % $woocommerce_loop['columns'] )
 			do_action( 'woocommerce_before_shop_loop_item_title' );
 		endif;
 		?>
-			<div class="h5-produto" ><h5 class="	<?php if($woocommerce_loop['loop'] == 5):
-							echo "destaque-produto"; endif;?>"><?php the_title(); ?></h5></div>
+			<div class="h5-produto" ><a  href="<?php echo get_permalink(  ); ?>"><h5 class="	<?php if($woocommerce_loop['loop'] == 5 && !is_archive() ):
+							echo "destaque-produto"; endif;?>"><?php the_title(); ?></h5></a></div>
 
 		<?php
 			/**
@@ -86,8 +96,7 @@ if ( 0 == $woocommerce_loop['loop'] % $woocommerce_loop['columns'] )
 			do_action( 'woocommerce_after_shop_loop_item_title' );
 		?>
 		</div><!--enrolador-produto-->
-	</a>
 
-	<?php do_action( 'woocommerce_after_shop_loop_item' ); ?>
+	<!-- <?php do_action( 'woocommerce_after_shop_loop_item' ); ?> -->
 
 </li>

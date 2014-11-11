@@ -39,7 +39,7 @@ html .sem-margem{
 .logo-loja{
 	background-image:url('images/logo-loja.png');
 }
-.page-template-page-loja-php, .single-product {
+.page-template-page-loja-php, .single-product, .tax-product_cat, .woocommerce-page  {
  	padding-top: 80px;
 	}
 #container-menu-loja{
@@ -74,6 +74,8 @@ html .sem-margem{
 }
 #imagem-destaque img, #imagem-post-destaque img{
 	width:100%;
+	height: auto;
+	
 }
 #lista-slider{
 	max-width:670px;
@@ -160,7 +162,7 @@ glyphicon-plus:before:hover{
 	color:#FD602F;
 	
 }
-.page-template-page-loja-php #content, .single-product #content, .single-product .shopping-title{
+.page-template-page-loja-php #content, .single-product #content, .single-product .shopping-title, .tax-product_cat #content, .tax-product_cat .shopping-title, .woocommerce-page #main-loja{
 	max-width:1020px;
 	margin:0 auto;
 	float: none;
@@ -168,6 +170,7 @@ glyphicon-plus:before:hover{
 }
 #container-header{
 	background-color: #ece7d9;
+	min-height: 675px;
 	
 }
 .products li img{
@@ -181,6 +184,9 @@ glyphicon-plus:before:hover{
 	width:100%;
 	background:transparent;
 	
+}
+.h5-produto h5{
+	max-width:78%;
 }
 .duplo .enrolador-produto .h5-produto{
 	position: relative;
@@ -197,7 +203,7 @@ glyphicon-plus:before:hover{
 li.duplo img{
 	max-width:629px;
 	width:100%;
-	height:100%;
+	height:auto;
 }
 
 .duplo{
@@ -214,6 +220,7 @@ li.duplo img{
 }
 li.duplo{
 	max-height: 354px;
+	margin-bottom: 50px;
 }
 #imagem-post-destaque{
 	padding:0;
@@ -277,7 +284,7 @@ html #content .enrolador-produto span.price, .woocommerce.single-product div.pro
 	  opacity: 0.8;
 }
 .button.product_type_simple{
-	display:none;
+/*	visibility:hidden;*/
 }
 
 /*single*/
@@ -286,7 +293,7 @@ html #content .enrolador-produto span.price, .woocommerce.single-product div.pro
 	background:#ffffff;
 }
 
-.single-product {
+.single-product, .tax-product_cat  {
 background: url(images/bg-loja.jpg) center top no-repeat #eaeaea;
 }
 
@@ -468,7 +475,7 @@ margin-bottom: 0;
 border-top: 3px solid #FD602F;
 }
 
-.single-product.woocommerce .woocommerce-message:before, .single-product.woocommerce-page .woocommerce-message:before{
+html .woocommerce .woocommerce-error:before, .woocommerce-page .woocommerce-error:before, html .woocommerce .woocommerce-info:before, .woocommerce-page .woocommerce-info:before, html .woocommerce .woocommerce-message:before, html .woocommerce-page .woocommerce-message:before, .single-product.woocommerce .woocommerce-message:before, .single-product.woocommerce-page .woocommerce-message:before, html .woocommerce .products .star-rating, html .woocommerce-page .products .star-rating, .star-rating{
 	display:none;
 }
 .single-product .posted_in{
@@ -487,6 +494,155 @@ hr.clearfix{
 .single-product.woocommerce .related ul li.product:nth-child(4){
 	margin-right:0;
 }
+
+#main-loja{
+	min-height: 680px;
+}
+
+html .woocommerce a.button.alt, html .woocommerce button.button.alt, html .woocommerce input.button.alt, html .woocommerce #respond input#submit.alt, html .woocommerce #content input.button.alt, html .woocommerce-page a.button.alt, html .woocommerce-page button.button.alt, html .woocommerce-page input.button.alt, html .woocommerce-page #respond input#submit.alt, html .woocommerce-page #content input.button.alt{
+	background:#FD602F;
+}
+
+html .woocommerce a.button.alt:hover, html .woocommerce button.button.alt:hover, html .woocommerce input.button.alt:hover, html .woocommerce #respond input#submit.alt:hover, html .woocommerce #content input.button.alt:hover, html .woocommerce-page a.button.alt:hover, html .woocommerce-page button.button.alt:hover, html .woocommerce-page input.button.alt:hover, html .woocommerce-page #respond input#submit.alt:hover, html .woocommerce-page #content input.button.alt:hover{
+	background:#D84112;
+}
+
+html .woocommerce .woocommerce-message, html .woocommerce-page .woocommerce-message{
+	box-shadow: none;
+	border: 2px solid;
+	border-top: 3px solid #FD602F;	
+}
+.woocommerce-checkout #content .woocommerce-info a{
+	color:#FD602F;
+}
+
+.custom-pagination{
+	text-align:center;
+}
+.custom-pagination a{
+	color:#000000;
+}
+.enrolador-capa{
+	position:absolute;
+	background-color: rgba(0, 0, 0, 0.76);
+}
+html .woocommerce a.button, html .woocommerce button.button, html .woocommerce input.button, html .woocommerce #respond input#submit, html .woocommerce #content input.button, html .woocommerce-page a.button, html .woocommerce-page button.button, html .woocommerce-page input.button, html .woocommerce-page #respond input#submit, html .woocommerce-page #content input.button, html html .woocommerce a.button, html html .woocommerce button.button, html html .woocommerce input.button, html html .woocommerce #respond input#submit, html html .woocommerce #content input.button, html html .woocommerce-page a.button, html html .woocommerce-page button.button, html html .woocommerce-page input.button, html html .woocommerce-page #respond input#submit, html html .woocommerce-page #content input.button{
+	background: #FFFFFF;
+	border: solid 2px;
+}
+
+html .woocommerce a.button:hover, html .woocommerce button.button:hover, html .woocommerce:hover input.button:hover, html .woocommerce #respond input#submit:hover, html .woocommerce #content input.button:hover, html .woocommerce-page a.button:hover, html .woocommerce-page button.button:hover, html .woocommerce-page input.button:hover, html .woocommerce-page #respond input#submit:hover, html .woocommerce-page #content input.button:hover{
+	background: #EAEAEA;
+}
+
+html .woocommerce .quantity .plus, html .woocommerce .quantity .minus, html .woocommerce #content .quantity .plus, html .woocommerce #content .quantity .minus, html .woocommerce-page .quantity .plus, html .woocommerce-page .quantity .minus, html .woocommerce-page #content .quantity .plus, html .woocommerce-page #content .quantity .minus{
+	background: #FFFFFF;
+	
+}
+.add_to_cart_button{
+	background-image: url('images/carrinhoadd.png');
+	
+}
+.added_to_cart{
+	
+}
+.products .add_to_cart_button.visible, .added_to_cart{
+	
+	background-repeat: no-repeat;
+	background-size: 42px 30px;
+	width: 42px;
+	height: 30px;
+	position: relative;
+	top: -220px;
+	left: 180px;
+	text-indent: -9999px;
+	display:block;
+		
+}
+
+.products .add_to_cart_button.visible, .products .added_to_cart.visible{
+	color:black;
+	visibility:visible;
+}
+.inivisible{
+	visibility:hidden;
+}
+.adicionado.visible, .lupa.visible{
+	visibility:visible;
+}
+.comprar.suma, .add_to_cart_button.visible.suma{
+	display:none;
+}
+.adicionado{
+	position: absolute;
+	top: -10px;
+	right: 25px;
+	background: black;
+	padding: 11px;
+	visibility:hidden;
+	color:#ffffff;
+	-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=80)";
+
+	  /* IE 5-7 */
+	  filter: alpha(opacity=80);
+
+	  /* Netscape */
+	  -moz-opacity: 0.8;
+
+	  /* Safari 1.x */
+	  -khtml-opacity: 0.8;
+
+	  /* Good browsers */
+	  opacity: 0.8;
+	}
+html #content .comprar{
+	position: absolute;
+/*	top: 113px;*/
+	text-indent:-99999px;
+	background-image: url('images/carrinhoadd.png');
+	background-size:50px auto;
+/*	right: 72px;*/
+	width:50px;
+	height:50px;
+	background-repeat:no-repeat;
+	background-color:transparent;
+	border:none;
+	box-shadow:none;
+}
+.lupa {
+	background-repeat: no-repeat;
+	background-size: 42px 30px;
+	width: 42px;
+	height: 30px;
+	position: absolute;
+/*	top: 113px;*/
+/*	left: 72px;*/
+	background-image: url(images/lupa.png);
+	display:block;
+	z-index:999;
+	text-indent:-99999px;
+}
+
+#myCarousel{
+	width:100%;
+}
+html #myCarousel .carousel-control{
+	background:transparent;
+}
+#myCarousel #titulo-destaque{
+	margin-top:-20px;
+}
+
+.enrolador-produto:hover .enrolador-capa{
+
+	display:block;
+}
+.enrolador-capa{display:none}
+
+
+
+
+
 
 
 
@@ -507,6 +663,20 @@ hr.clearfix{
 	}
 }
 @media screen and (max-width: 767px) {
+	.page-template-page-loja-php #content{
+		width: 100%;
+		
+	}
+	.h5-produto h5 {
+	max-width: 74%;
+	font-size: 0.8em;
+	}
+	#menu-categoria a {
+	
+	padding: 0px;
+	}
+	#container-header{min-height:0px}
+	
 	#antes, #depois{
 		display:none;}
 	.shopping-title img{
@@ -535,7 +705,9 @@ hr.clearfix{
 	display: block;
 	max-width:289px;
 	}
-	
+	.duplo .enrolador-produto {
+	max-width: 80%;
+	}
 	.enrolador-produto, .enrolador-produto.sem-margem {
 		margin-bottom: 68px;
 		
@@ -583,7 +755,9 @@ hr.clearfix{
 		font-size:0.5em;
 		margin: 20px 5px 0 0;
 	}
-	
+	.duplo .enrolador-produto {
+	max-width: 75%;
+	}
 }
 
 

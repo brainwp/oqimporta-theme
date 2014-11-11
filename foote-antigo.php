@@ -29,25 +29,34 @@
 </div><!-- #page -->
 <?php wp_footer(); ?>
 <script>
-	var id;
-	var altura;
-	var largura;
-		jQuery( ".enrolador-produto" ).hover(
-			  	function() {
-					var altura = jQuery( this ).children('img').css('height');
-					var largura = jQuery( this ).children('img').css('width');
-					jQuery( this ).children('.enrolador-capa').css({ "width": largura, "height": altura});
-								id = jQuery( this ).children('.enrolador-capa').attr('id');
-					
-					var top = parseFloat(altura)/2;
-					var left = parseFloat(largura)/4;
-					jQuery( this ).children('.enrolador-capa').children('.lupa').css({ "left": left, "top": top});
-					jQuery( this ).children('.enrolador-capa').children('.comprar').css({ "right": left, "top": top});
-					
-					
-					});
-					
-	jQuery('.comprar').click(function() {
+	// var id;
+	// 	jQuery( ".enrolador-produto img" ).hover(
+	// 	  	function() {
+	// 			var altura = jQuery( this ).css('height');
+	// 			var largura = jQuery( this ).css('width');
+	// 			jQuery( this ).siblings('.enrolador-capa').css({ "width": largura, "height": altura});
+	// 			jQuery( this ).siblings('.enrolador-capa').css('visibility','visible');
+	// 			jQuery(this).closest('a').siblings('.add_to_cart_button').addClass('visible');
+	// 			id = jQuery( this ).siblings('.enrolador-capa').attr('id');
+	// 			jQuery(this).closest('a').siblings('.lupa').addClass('visible');
+	// 			
+	// 		}, 		
+	// 		function() {
+	// 	
+	// 			jQuery( ".enrolador-capa" ).hover(
+	// 					function() {},
+	// 					function(){
+	// 						jQuery( this ).css('visibility','hidden');
+	// 						jQuery(this).closest('a').siblings('.add_to_cart_button').removeClass('visible');
+	// 						jQuery(this).closest('a').siblings('.lupa').removeClass('visible');
+	// 						
+	// 						
+	// 					});
+	// 		    			
+	// 			
+	// 		}
+	// 	);
+	jQuery('.add_to_cart_button').click(function() {
 			
 			jQuery(this).addClass('suma');
 			add = '#adicionado-'+ id;

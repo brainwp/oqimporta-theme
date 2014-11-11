@@ -36,7 +36,8 @@
 	    <!-- Collect the nav links, forms, and other content for toggling -->
 	    <div id="container-menu-loja" class="collapse navbar-collapse navbar-ex1-collapse">
 	        <?php
-			$wrap= '<ul id="%1$s" class="%2$s">%3$s</ul><a class= "inline-block link-carrinho" href="#"><img src="'.get_template_directory_uri().'/images/carrinho-menu.png"></a>';
+			$endereco = get_permalink( wc_get_page_id( 'cart' ) ) ;
+			$wrap= '<ul id="%1$s" class="%2$s">%3$s</ul><a class= "inline-block link-carrinho" href="'.$endereco.'"><img src="'.get_template_directory_uri().'/images/carrinho-menu.png"></a>';
 			
 	        wp_nav_menu( array(
 	            'theme_location' => 'loja',

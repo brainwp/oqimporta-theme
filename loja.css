@@ -472,19 +472,16 @@ html .woocommerce.single-product #content .woocommerce-tabs ul.tabs{
 	font-weight: lighter;
 }
 
-html .woocommerce.single-product #content .woocommerce-tabs .panel.entry-content{
-	padding:0 20px;
+html .woocommerce.single-product #content .woocommerce-tabs .panel.entry-content {
+	padding: 0 20px;
 	background-color: rgba(255, 255, 255, 0.49);
-	color:#000000;
-	
+	color: #666;
 }
-.stars a{
+.stars a {
 	color:#FD602F;
 }
-
-
 .single-product.woocommerce div.product form.cart, .woocommerce.single-product #content div.product form.cart, woocommerce-page.single-product div.product form.cart, woocommerce-page.single-product #content div.product form.cart {
-margin-bottom: 0;
+	margin-bottom: 0;
 }
 .woocommerce.single-product div.product form.cart .button, .woocommerce.single-product #content div.product form.cart .button, woocommerce-page.single-product div.product form.cart .button, woocommerce-page.single-product #content div.product form.cart .button{
 	background-color:transparent;
@@ -500,7 +497,6 @@ margin-bottom: 0;
 }
 .single-product.woocommerce div.product form.cart div.quantity, .woocommerce.single-product #content div.product form.cart div.quantity, woocommerce-page.single-product div.product form.cart div.quantity, woocommerce-page.single-product #content div.product form.cart div.quantity{
 	margin-top:10px;
-	
 }
 .single-product.woocommerce .woocommerce-message, .single-product.woocommerce-page .woocommerce-message {
 border-top: 3px solid #FD602F;
@@ -513,14 +509,13 @@ html .woocommerce .woocommerce-error:before, .woocommerce-page .woocommerce-erro
 	margin-left:20px;
 }
 
-
 hr.clearfix{
-	width:100%;
-	border: solid 1px rgba(0, 0, 0, 0.33);
+	width: 100%;
+	border-bottom: solid 1px #999;
 }
 
 .single-product.woocommerce .related ul li.product, .single-product.woocommerce .related ul.products li.product, .single-product.woocommerce .upsells.products ul li.product, .single-product.woocommerce .upsells.products ul.products li.product, .single-product.woocommerce-page .related ul li.product, .single-product.woocommerce-page .related ul.products li.product, .single-product.woocommerce-page .upsells.products ul li.product, .single-product.woocommerce-page .upsells.products ul.products li.product{
-	width:22%;
+	width: 33%;
 }
 .single-product.woocommerce .related ul li.product:nth-child(4){
 	margin-right:0;
@@ -656,6 +651,10 @@ html #myCarousel .carousel-control{
 
 .entry-sumary {
 	font-family: 'Source Sans Pro', sans-serif;
+}
+
+.woocommerce ul.products li.product, .woocommerce-page ul.products li.product {
+	margin: 0;
 }
 
 .woocommerce-tabs h1, .woocommerce-tabs h2, .woocommerce-tabs h3, .woocommerce-tabs h4, .woocommerce-tabs h5, .woocommerce-tabs h6 {

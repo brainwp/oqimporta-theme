@@ -24,7 +24,9 @@
 
 <body  <?php body_class(); ?>>
 
-	<div class="bg-header-loja"></div><!-- bg-header-loja -->
+	<?php if (is_page('shopping')) : ?>
+		<div class="bg-header-loja"></div><!-- bg-header-loja -->
+	<?php endif; ?>
 
     <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
 	    <!-- Brand and toggle get grouped for better mobile display -->

@@ -650,9 +650,14 @@ html #myCarousel .carousel-control{
 	margin-top:-20px;
 }
 .enrolador-produto:hover .enrolador-capa{
-	display:block;
+	opacity:0.99;
+	transition:200ms ease all; 
 }
-.enrolador-capa{ display:none }
+.enrolador-produto .enrolador-capa{
+    transition:200ms ease all; 
+	display:block !important;
+	opacity:0;
+ }
 
 .entry-sumary {
 	font-family: 'Source Sans Pro', sans-serif;

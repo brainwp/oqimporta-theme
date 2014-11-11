@@ -1,6 +1,14 @@
 a, a:hover, a:visited{
 	color:#ffffff;
 }
+.bg-header-loja {
+	background-color: #ECE7D9;
+	position: absolute;
+	top: 0;
+	height: 650px;
+	z-index: -1;
+	width: 100%;
+}
 .navbar.navbar-fixed-top{
 	width:100%;
 	background:black;
@@ -41,11 +49,11 @@ html .sem-margem{
 }
 .page-template-page-loja-php, .single-product, .tax-product_cat, .woocommerce-page  {
  	padding-top: 80px;
-	}
+}
 #container-menu-loja{
-	max-width: 1020px;
+	max-width: 1140px;
 	width: 80%;
-	margin: 0 0 0 7.3%;
+	margin: 0 auto;
 	float: none;
 	padding:15px 0;
 }
@@ -60,8 +68,7 @@ html .sem-margem{
 	min-height: 540px;
 	margin:0 auto;
 	float: none;
-	max-width: 1020px;
-	
+	max-width: 1140px;
 }
 .shopping-title{
 	padding:35px 0;
@@ -101,42 +108,38 @@ html .sem-margem{
 	  opacity: 0.8;
 }
 #menu-categoria{
-	border-left:solid 1.5px red;
-	margin-left:40px;
-	height: 175px;
-	
+	border-left: solid 1.5px red;
+	margin-left: 40px;
+	height: auto;	
 }
 #menu-categoria ul{
-	margin-top:-10px;
-	margin:-10px 0 10px 30px;
+	margin: -10px 0 10px 20px;
 	max-width: 180px;
-	}
-
+}
 #menu-categoria a{
 	font-size:2.1em;
 	font-family: 'Source Sans Pro', sans-serif;
 	font-weight:200;
-	color:#444444;
+	color: #555;
 	text-decoration: none;   
+}
+#menu-categoria a:hover{
+	color: #111;
 }
 #titulo-destaque h3, #titulo-destaque-post h3{
 	margin:0;
 	padding:0;
 	font-weight:lighter;
 	font-size:1.3em;
-	  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=80)";
-
-	  /* IE 5-7 */
-	  filter: alpha(opacity=80);
-
-	  /* Netscape */
-	  -moz-opacity: 0.8;
-
-	  /* Safari 1.x */
-	  -khtml-opacity: 0.8;
-
-	  /* Good browsers */
-	  opacity: 0.8;
+	-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=80)";
+	/* IE 5-7 */
+	filter: alpha(opacity=80);
+	/* Netscape */
+	-moz-opacity: 0.8;
+	/* Safari 1.x */
+	-khtml-opacity: 0.8;
+	/* Good browsers */
+	opacity: 0.8;
 }
 #titulo-destaque{
 	position:relative;
@@ -147,9 +150,16 @@ html .sem-margem{
 	margin-top:-45px;
 	width:93%;
 	right:0;
-	
 }
 
+.carousel-caption {
+}
+
+.carousel-caption h3 {
+	font-weight: lighter;
+	overflow: hidden;
+	width: 76%;
+}
 
 #menu-menu-da-loja .active>a, #menu-menu-da-loja a:hover{
 	background:none;
@@ -163,22 +173,19 @@ glyphicon-plus:before:hover{
 	
 }
 .page-template-page-loja-php #content, .single-product #content, .single-product .shopping-title, .tax-product_cat #content, .tax-product_cat .shopping-title, .woocommerce-page #main-loja{
-	max-width:1020px;
+	max-width:1140px;
 	margin:0 auto;
 	float: none;
-	
 }
 #container-header{
 	background-color: #ece7d9;
-	min-height: 675px;
-	
+	min-height: 570px;	
 }
 .products li img{
-	width: 289px;
+	width: 100%;
 	padding: 20px;
 	background: #ffffff;
 }
-
 .duplo .enrolador-produto{
 	max-width: 605px;
 	width:100%;
@@ -195,9 +202,6 @@ glyphicon-plus:before:hover{
 	width: 85%;
 	left: 92px;
 	left: 15%;
-	
-	 
-	
 }
 
 li.duplo img{
@@ -227,8 +231,8 @@ li.duplo{
 }
 .enrolador-produto {
 	background: black;
-	max-width: 289px;
-	font-weight:lighter;
+	width: 90%;
+	font-weight: lighter;
 }
 
 .enrolador-produto h5{
@@ -523,7 +527,7 @@ html .woocommerce .woocommerce-message, html .woocommerce-page .woocommerce-mess
 	color:#000000;
 }
 .enrolador-capa{
-	position:absolute;
+	position: absolute;
 	background-color: rgba(0, 0, 0, 0.76);
 }
 html .woocommerce a.button, html .woocommerce button.button, html .woocommerce input.button, html .woocommerce #respond input#submit, html .woocommerce #content input.button, html .woocommerce-page a.button, html .woocommerce-page button.button, html .woocommerce-page input.button, html .woocommerce-page #respond input#submit, html .woocommerce-page #content input.button, html html .woocommerce a.button, html html .woocommerce button.button, html html .woocommerce input.button, html html .woocommerce #respond input#submit, html html .woocommerce #content input.button, html html .woocommerce-page a.button, html html .woocommerce-page button.button, html html .woocommerce-page input.button, html html .woocommerce-page #respond input#submit, html html .woocommerce-page #content input.button{
@@ -541,13 +545,11 @@ html .woocommerce .quantity .plus, html .woocommerce .quantity .minus, html .woo
 }
 .add_to_cart_button{
 	background-image: url('images/carrinhoadd.png');
-	
 }
 .added_to_cart{
 	
 }
 .products .add_to_cart_button.visible, .added_to_cart{
-	
 	background-repeat: no-repeat;
 	background-size: 42px 30px;
 	width: 42px;
@@ -557,18 +559,16 @@ html .woocommerce .quantity .plus, html .woocommerce .quantity .minus, html .woo
 	left: 180px;
 	text-indent: -9999px;
 	display:block;
-		
 }
-
 .products .add_to_cart_button.visible, .products .added_to_cart.visible{
 	color:black;
 	visibility:visible;
 }
 .inivisible{
-	visibility:hidden;
+	visibility: hidden;
 }
 .adicionado.visible, .lupa.visible{
-	visibility:visible;
+	visibility: visible;
 }
 .comprar.suma, .add_to_cart_button.visible.suma{
 	display:none;
@@ -581,20 +581,17 @@ html .woocommerce .quantity .plus, html .woocommerce .quantity .minus, html .woo
 	padding: 11px;
 	visibility:hidden;
 	color:#ffffff;
+	z-index: 999999;
 	-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=80)";
-
-	  /* IE 5-7 */
-	  filter: alpha(opacity=80);
-
-	  /* Netscape */
-	  -moz-opacity: 0.8;
-
-	  /* Safari 1.x */
-	  -khtml-opacity: 0.8;
-
-	  /* Good browsers */
-	  opacity: 0.8;
-	}
+	/* IE 5-7 */
+	filter: alpha(opacity=80);
+	/* Netscape */
+	-moz-opacity: 0.8;
+	/* Safari 1.x */
+	-khtml-opacity: 0.8;
+	/* Good browsers */
+	opacity: 0.8;
+}
 html #content .comprar{
 	position: absolute;
 /*	top: 113px;*/
@@ -610,14 +607,12 @@ html #content .comprar{
 	box-shadow:none;
 }
 .lupa {
-	background-repeat: no-repeat;
-	background-size: 42px 30px;
-	width: 42px;
-	height: 30px;
+	width: 45px;
+	height: 41px;
 	position: absolute;
 /*	top: 113px;*/
 /*	left: 72px;*/
-	background-image: url(images/lupa.png);
+	background: url(images/lupa.png) center center no-repeat;
 	display:block;
 	z-index:999;
 	text-indent:-99999px;

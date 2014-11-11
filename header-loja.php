@@ -24,6 +24,7 @@
 
 <body  <?php body_class(); ?>>
 
+	<div class="bg-header-loja"></div><!-- bg-header-loja -->
 
     <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
 	    <!-- Brand and toggle get grouped for better mobile display -->
@@ -56,6 +57,8 @@
 	
 <div id="page-loja" class="hfeed site  sem-margem">
 	<?php do_action( 'before' ); ?>
+
+	<div class="container">
 		
 	<div id="main-loja" class="site-main sem-margem">
 		

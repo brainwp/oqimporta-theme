@@ -55,12 +55,9 @@ if ( 0 == $woocommerce_loop['loop'] % $woocommerce_loop['columns'] )
 			if($woocommerce_loop['loop'] == 3 || $woocommerce_loop['loop'] == 5 || $woocommerce_loop['loop'] == 8 || $woocommerce_loop['loop'] == 11):
 				echo "sem-margem"; endif;?> enrolador-produto">
 				<div class="enrolador-capa" id="<?php echo($post->post_name) ?>">
-					<a  class="lupa" href="<?php echo get_permalink(  ); ?>">
-						.
-					</a>
+					<a  class="lupa" href="<?php echo get_permalink(  ); ?>"></a>
 					<a href="/oque2/shopping/?add-to-cart=<?php echo($post->ID) ?>" rel="nofollow" data-product_id="<?php echo($post->ID) ?>" data-product_sku="" data-quantity="1" class="comprar button add_to_cart_button product_type_simple">Comprar</a> 
 				</div>
-				
 				
 				<div class="adicionado" id="adicionado-<?php echo($post->post_name) ?>">Adicionado ao Carrinho</div>
 		<?php
@@ -83,8 +80,13 @@ if ( 0 == $woocommerce_loop['loop'] % $woocommerce_loop['columns'] )
 			do_action( 'woocommerce_before_shop_loop_item_title' );
 		endif;
 		?>
-			<div class="h5-produto" ><a  href="<?php echo get_permalink(  ); ?>"><h5 class="	<?php if($woocommerce_loop['loop'] == 5 && !is_archive() ):
-							echo "destaque-produto"; endif;?>"><?php the_title(); ?></h5></a></div>
+			<div class="h5-produto" >
+				<a  href="<?php echo get_permalink(); ?>">
+					<h5 class="	<?php if( $woocommerce_loop['loop'] == 5 && !is_archive() ) : echo "destaque-produto"; endif; ?>">
+						<?php the_title(); ?>
+					</h5>
+				</a>
+			</div><!-- h5-produto -->
 
 		<?php
 			/**

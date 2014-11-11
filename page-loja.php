@@ -2,8 +2,9 @@
 /** Template Name: Loja */
 
 get_header('loja'); ?>
+	
 	<div id="container-header" >	
-		<div id="meio" class="site-main col-sm-10">
+		<div id="meio" class="site-main row">
 		<div class="clearfix"></div>
 		<div class=" shopping-title">
 			<a href="<?php echo home_url('/shopping'); ?>"><img src="<?php echo get_template_directory_uri();?>/images/shopping.png"></a>
@@ -17,7 +18,7 @@ get_header('loja'); ?>
 				<?php
 				wp_nav_menu( array(
 		            'theme_location' => 'loja_categorias',
-		            'container' => false,	
+		            'container' => false,
 		            'menu_class' => 'nav navbar-nav',
 		        ));
 				?>
@@ -27,7 +28,7 @@ get_header('loja'); ?>
 	</div><!--meio-->	
 	</div><!--container header-->
 	<div class="clearfix"></div>
-	<div id="content" class="sem-margem site-content col-sm-10" role="main">
+	<div id="content" class="sem-margem site-content col-sm-12" role="main">
 	
 			<ul class="products">
 				<?php
@@ -64,6 +65,5 @@ get_header('loja'); ?>
 			</ul><!--/.products-->
 
 		</div><!-- #content -->
-		
-		
+
 <?php get_footer('loja'); ?>

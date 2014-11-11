@@ -16,24 +16,22 @@ $numero = $loop->post_count;
     		?>
         </ol>    -->
 
-
 	<div id="lista-slider" class="carousel-inner">
 		<?php
-
 			while ( $loop->have_posts() ) : $loop->the_post();
-				?>
+		?>
 				<div class="item <?php if ($count == 0){echo 'active';}?>">
 					<div id="imagem-destaque" class="img-carousel col-md-6">
 						<?php
-						$attachment_ids = $product->get_gallery_attachment_ids();
-						$attachment_id = $attachment_ids[0];
-						$image       = wp_get_attachment_image( $attachment_id, 'duplo' );
+							$attachment_ids = $product->get_gallery_attachment_ids();
+							$attachment_id = $attachment_ids[0];
+							$image = wp_get_attachment_image( $attachment_id, 'duplo' );
 						?>
 						<a href="<?php the_permalink();?>"><?php echo $image;?></a>
 
 					</div>
-					<div id="titulo-destaque" class="carousel-caption col-md-6">
-		            		<a href="<?php the_permalink();?>"><h3><?php the_title();?></h3></a>
+					<div id="titulo-destaque" class="carousel-caption">
+		            	<a href="<?php the_permalink();?>"><h3><?php the_title();?></h3></a>
 					</div>
 		 	    </div>
 		    

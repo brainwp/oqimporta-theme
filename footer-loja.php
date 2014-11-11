@@ -9,6 +9,7 @@
 ?>
 
 	</div><!-- #main -->
+	</div><!-- container -->
 	
 	<div class="clearfix"></div>
 	<footer id="" class="footer-loja site-footer" role="contentinfo">

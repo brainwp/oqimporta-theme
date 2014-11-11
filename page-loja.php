@@ -6,7 +6,7 @@ get_header('loja'); ?>
 		<div id="meio" class="site-main col-sm-10">
 		<div class="clearfix"></div>
 		<div class=" shopping-title">
-			<img src="<?php echo get_template_directory_uri();?>/images/shopping.png">
+			<a href="<?php echo home_url('/shopping'); ?>"><img src="<?php echo get_template_directory_uri();?>/images/shopping.png"></a>
 		</div><!-- shopping-title-->
 		<div class=" slider">
 			<div id="slider" class="inline-block col-sm-8 sem-margem">

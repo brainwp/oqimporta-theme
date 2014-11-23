@@ -152,7 +152,9 @@ function oqimporta_scripts() {
 	
 	wp_enqueue_style( 'style', get_stylesheet_uri() );
 
-	wp_enqueue_script( 'image-product-hover-js' );
+	if ( !is_archive() ) {
+		wp_enqueue_script( 'image-product-hover-js' );
+	}
 
 	wp_enqueue_script( 'navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20120206', true );
 

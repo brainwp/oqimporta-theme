@@ -36,10 +36,6 @@ a, a:hover, a:visited{
 	  /* Good browsers */
 	  opacity: 0.8;
 }
-html .sem-margem{
-	margin:0;
-	padding:0;
-}
 .inline-block{
 	display:inline-block;
 	float:left;
@@ -235,7 +231,7 @@ li.duplo{
 	font-weight: lighter;
 }
 
-.enrolador-produto h5{
+.enrolador-produto h5, .item-produto h5{
 	padding: 20px;
 	display:inline-block;
 	font-weight:lighter;
@@ -515,8 +511,8 @@ html .woocommerce .woocommerce-error:before, .woocommerce-page .woocommerce-erro
 
 
 hr.clearfix{
-	width:100%;
-	border: solid 1px rgba(0, 0, 0, 0.33);
+	width: 100%;
+	border: none;
 }
 
 .single-product.woocommerce .related ul li.product, .single-product.woocommerce .related ul.products li.product, .single-product.woocommerce .upsells.products ul li.product, .single-product.woocommerce .upsells.products ul.products li.product, .single-product.woocommerce-page .related ul li.product, .single-product.woocommerce-page .related ul.products li.product, .single-product.woocommerce-page .upsells.products ul li.product, .single-product.woocommerce-page .upsells.products ul.products li.product{
@@ -668,6 +664,10 @@ html #myCarousel .carousel-control{
 	font-weight: lighter !important;
 }
 
+.woocommerce ul.products li.product, .woocommerce-page ul.products li.product {
+	width: 33.3333%;
+}
+
 
 @media screen and (max-width: 1080px) {
 	#main-loja{
@@ -780,3 +780,8 @@ html #myCarousel .carousel-control{
 		max-width: 75%;
 	}
 }	
+
+html .sem-margem{
+	margin:0 !important;
+	padding:0 !important;
+}

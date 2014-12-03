@@ -13,7 +13,7 @@ get_header('loja'); ?>
 			<div id="slider" class="inline-block col-sm-8 sem-margem">
 				<?php include('slider-loja.php'); ?>
 			</div>
-			<div id="menu-categoria" class="inline-block col-sm-3 sem-margem">
+			<div id="menu-categoria" class="inline-block col-sm-3">
 			
 				<?php
 				wp_nav_menu( array(

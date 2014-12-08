@@ -784,3 +784,7 @@ html .sem-margem{
 	margin:0 !important;
 	padding:0 !important;
 }
+
+div.pp_woocommerce div.ppt {
+	display: none !important;
+}

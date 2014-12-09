@@ -147,7 +147,19 @@ function oqimporta_scripts() {
 	wp_enqueue_style( 'bootstrap-css' );
 	/////////bootstrap/////////
 	
+	/////////slider produtos/////////
+	/////////	/////////	/////////	/////////	/////////	/////////	
+wp_register_script( 'slick-js', get_template_directory_uri() . '/slick/slick.min.js', array( 'jquery' ), '3.0.1', true );
+	wp_register_style( 'slick-css', get_template_directory_uri() . '/slick/slick.css', array(), '3.0.1', 'all' );
 
+if ( is_product() ) {
+	wp_enqueue_script( 'slick-js' );
+	wp_enqueue_style( 'slick-css' );
+	
+	
+}
+	/////////slider produtos/////////
+		/////////	/////////	/////////	/////////	/////////
 	
 	
 	wp_enqueue_style( 'style', get_stylesheet_uri() );

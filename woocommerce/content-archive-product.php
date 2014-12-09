@@ -38,7 +38,7 @@ $classes[] = 'sem-margem col-md-4';
 	<?php do_action( 'woocommerce_before_shop_loop_item' ); ?>
 	
 		<div class="sem-margem enrolador-produto">
-				<div class="item-capa" id="<?php echo($post->post_name) ?>">
+				<div class="enrolador-capa" id="<?php echo($post->post_name) ?>">
 					<a  class="lupa" href="<?php echo get_permalink(  ); ?>"></a>
 					<a href="/oque2/shopping/?add-to-cart=<?php echo($post->ID) ?>" rel="nofollow" data-product_id="<?php echo($post->ID) ?>" data-product_sku="" data-quantity="1" class="comprar button add_to_cart_button product_type_simple">Comprar</a> 
 				</div>

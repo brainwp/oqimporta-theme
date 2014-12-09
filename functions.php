@@ -152,7 +152,7 @@ function oqimporta_scripts() {
 wp_register_script( 'slick-js', get_template_directory_uri() . '/slick/slick.min.js', array( 'jquery' ), '3.0.1', true );
 	wp_register_style( 'slick-css', get_template_directory_uri() . '/slick/slick.css', array(), '3.0.1', 'all' );
 
-if ( is_product() ) {
+if ( function_exists('is_product') && is_product() ) {
 	wp_enqueue_script( 'slick-js' );
 	wp_enqueue_style( 'slick-css' );
 	

@@ -788,3 +788,8 @@ html .sem-margem{
 div.pp_woocommerce div.ppt {
 	display: none !important;
 }
+#img-preload{
+	visibility:hidden;
+	position:fixed;
+	z-index:-10;
+}

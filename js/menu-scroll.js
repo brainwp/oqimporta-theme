@@ -5,5 +5,5 @@ jQuery(window).scroll(function(){
     } else {
          jQuery('#bg-menu-blog').css({'position': 'absolute', 'z-index': 'auto', 'margin-top': '250px'});
          jQuery('#site-navigation').css({'position': 'relative', 'z-index': 'auto', 'margin-top': '68px'});
-        }
+    }
 });

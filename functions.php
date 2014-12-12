@@ -135,11 +135,11 @@ add_action( 'widgets_init', 'oqimporta_widgets_init' );
  */
 function oqimporta_scripts() {
 	/////////bootstrap/////////
-	/////////bootstrap/////////
 	wp_register_script( 'bootstrap-js', get_template_directory_uri() . '/bootstrap/js/bootstrap.min.js', array( 'jquery' ), '3.0.1', true );
 
 	wp_register_script( 'image-product-hover-js', get_template_directory_uri() . '/js/image-product-hover.js', array( 'jquery' ), '3.0.1', true );
 	wp_register_script( 'thumbnail-hover-js', get_template_directory_uri() . '/js/thumbnail-hover.js', array( 'jquery' ), '3.0.1', true );
+	wp_enqueue_script( 'menu-scroll-js', get_template_directory_uri() . '/js/menu-scroll.js' );
 
 	wp_register_style( 'bootstrap-css', get_template_directory_uri() . '/bootstrap/css/bootstrap.min.css', array(), '3.0.1', 'all' );
 
@@ -150,14 +150,12 @@ function oqimporta_scripts() {
 	
 	/////////slider produtos/////////
 	/////////	/////////	/////////	/////////	/////////	/////////	
-wp_register_script( 'slick-js', get_template_directory_uri() . '/slick/slick.min.js', array( 'jquery' ), '3.0.1', true );
+	wp_register_script( 'slick-js', get_template_directory_uri() . '/slick/slick.min.js', array( 'jquery' ), '3.0.1', true );
 	wp_register_style( 'slick-css', get_template_directory_uri() . '/slick/slick.css', array(), '3.0.1', 'all' );
 
 if ( function_exists('is_product') && is_product() ) {
 	wp_enqueue_script( 'slick-js' );
 	wp_enqueue_style( 'slick-css' );
-	
-	
 }
 	/////////slider produtos/////////
 		/////////	/////////	/////////	/////////	/////////
@@ -245,11 +243,13 @@ function estilos() {
 add_action( 'wp_enqueue_scripts', 'estilos' );
 
 ///////////////////////////////////////////////////////////////////
-/////////////////////////////////////////google fonts
+// Google Fonts
+///////////////////////////////////////////////////////////////////
+
 function load_fonts() {
-            wp_register_style('googleFonts', 'http://fonts.googleapis.com/css?family=Open+Sans:400,300|Source+Sans+Pro:200,300,400');
-            wp_enqueue_style( 'googleFonts');
-        }
+    wp_register_style('googleFonts', 'http://fonts.googleapis.com/css?family=Open+Sans:400,300|Source+Sans+Pro:200,300,400');
+    wp_enqueue_style( 'googleFonts');
+}
     
     add_action('wp_print_styles', 'load_fonts');
 

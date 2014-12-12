@@ -182,6 +182,35 @@ if ( function_exists('is_product') && is_product() ) {
 }
 add_action( 'wp_enqueue_scripts', 'oqimporta_scripts' );
 
+
+/**
+ * Custom logo login.
+ */
+add_action('login_head', 'custom_logo_login');
+function custom_logo_login()
+{
+    echo '
+	<style type="text/css">
+		body.login div#login {
+			padding: 5% 0 0;
+		}
+		body.login div#login h1 {
+			text-align: center;
+			margin: 0 auto;
+		}
+		body.login div#login h1, body.login div#login h1 a {
+			width: 230px;
+			height: 75px;
+		}
+		body.login div#login h1 a {
+			background-image: url( ' . get_template_directory_uri() . '/images/logo-admin-oqimporta.png) !important;
+			padding: 0;
+			background-size: 275px;
+		}
+	</style>
+	';
+}
+
 /**
  * Implement the Custom Header feature
  */

@@ -250,8 +250,8 @@ Blog ======================================================================
 #logo-blog {
 	width: 446px;
 	height: 126px;
-	background: url(images/logo-blog.png) center top no-repeat transparent;
-	margin: 20px 0 0 0;
+	background: url("images/logo-blog.png") center top no-repeat transparent;
+	margin: 20px auto 0;
 }
 .a-logo-blog {
 	width: 446px;
@@ -940,7 +940,6 @@ a:active {
 
 /* =Menu
 ----------------------------------------------- */
-
 .navigation-main {
 	margin: 68px 0 0 0;
 	clear: both;
@@ -950,7 +949,6 @@ a:active {
 	background: url("images/oqimporta.jpg") no-repeat scroll left 5px transparent;
 	height: 45px;
 }
-
 .navigation-main ul {
 	list-style: none;
 	padding-left: 0;
@@ -960,7 +958,10 @@ a:active {
 	float: left;
 	position: relative;
 	padding-left: 15px;
-	border-right: 1px solid #F99;
+	border-right: 1px solid #666;
+}
+.navigation-main li:last-child {
+	border-right: 1px solid #000;
 }
 .navigation-main a {
 	font-family: 'Open Sans', sans-serif;
@@ -1012,28 +1013,22 @@ Menu Blog =================================================================
 */
 
 #site-navigation .menu-categorias-container {
-
 }
-
 #site-navigation .menu-categorias-container a {
 	font-family: 'Open Sans', sans-serif;
 	color: #FFF;
 	margin: 0 15px 0 0;
 }
-
 #site-navigation .menu-categorias-container a:hover {
-	color: #FCC;
+	color: #CCC;
 }
-
 #bg-menu-blog {
 	width: 100%;
 	height: 55px;
-	background: #e6462a; /* Vermelho Coral */
+	background: #000;
 	position: absolute;
 	margin: 250px 0 0 0;
-
 }
-
 /* Small menu */
 .menu-toggle {
 	display: none;

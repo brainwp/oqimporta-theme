@@ -43,9 +43,6 @@
 <div id="page" class="hfeed site">
 	<?php do_action( 'before' ); ?>
             
-    <div id="ilustra-blog">
-    </div><!-- #ilustra-blog -->
-            
 	<header id="masthead" class="site-header" role="banner">
 		<hgroup>
 			<div id="logo-blog">

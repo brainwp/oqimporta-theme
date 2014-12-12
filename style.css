@@ -94,10 +94,11 @@ Site =================================================================
 }
 
 #logo-site {
-	width: 300px;
-	height: 102px;
-	background: url(images/logo-site.png) no-repeat;
+	background: url('images/logo-site.png') center center no-repeat;
+	background-size: 100%;
 	float: left;
+	height: 102px;
+	width: 300px;
 }
 
 .a-logo-site {
@@ -290,22 +291,24 @@ Main ======================================================================
 .post-data {
 	width: 90px;
 	height: 80px;
-	background: #40482c;
+	background: #777777;
 	margin: 30px 0 0 -90px;
 	position: absolute;
-	color: #899470;
+	color: #FFF;
 	text-transform: uppercase;
+	font-family: 'Open Sans', sans-serif;
 }
 
 .dia-meta {
-	font-size: 2.2em;
+	font-size: 2.1em;
 	float: right;
 	margin: 9px 8px 0 0;
 	line-height: 1.2em;
+	font-weight: 300;
 }
 
 .mes-ano-meta {
-	font-size: 0.9em;
+	font-size: 0.8em;
 	float: right;
 	margin: 0 10px 0 0;
 }
@@ -402,6 +405,10 @@ Main ======================================================================
 	margin: 20px 0 10px 0;
 	color: #e6462a; /* Vermelho Coral */
 	text-transform: uppercase;
+}
+
+h1.widget-title a {
+	color: #e6462a; /* Vermelho Coral */
 }
 
 .menu-paginas-container {
@@ -1314,5 +1321,9 @@ line-height: 1.8em;
 
 a.zilla-button, a.zilla-button:visited {
 font-family: 'Open Sans',sans-serif !important;
+}
+
+.pllexislider.overlay ul li .jr-insta-wrap .jr-insta-datacontainer .jr-insta-desc {
+	font-size: 0.8em;
 }
 

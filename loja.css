@@ -9,6 +9,17 @@ a, a:hover, a:visited{
 	z-index: -1;
 	width: 100%;
 }
+.bg-header-single-loja {
+	background-color: #ECE7D9;
+	position: absolute;
+	top: 0;
+	height: 235px;
+	z-index: -1;
+	width: 100%;
+}
+#page-loja .shopping-title {
+	margin-bottom: 25px;
+}
 .navbar.navbar-fixed-top{
 	width:100%;
 	background:black;

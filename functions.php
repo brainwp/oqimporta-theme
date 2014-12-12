@@ -361,3 +361,10 @@ function custom_pagination($numpages = '', $pagerange = '', $paged='') {
 	add_filter('show_admin_bar', '__return_false');
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+function is_post_type( $tipo ){
+	global $wp_query;
+ 	if ( $tipo == get_post_type( $wp_query->post->ID ) )
+ 	return true;
+ 	return false;
+}

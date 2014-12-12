@@ -24,8 +24,10 @@
 
 <body  <?php body_class(); ?>>
 
-	<?php if (is_page('shopping')) : ?>
-		<div class="bg-header-loja"></div><!-- bg-header-loja -->
+	<?php if ( is_page( 'shopping' ) ) : ?>
+		<div class="bg-header-loja"></div><!-- bg-header-loja -->		
+	<?php elseif( is_post_type( 'product' ) || is_tax( 'product_cat' ) ) : ?>
+		<div class="bg-header-single-loja"></div><!-- bg-header-single-loja -->
 	<?php endif; ?>
 
     <nav class="navbar navbar-default navbar-fixed-top" role="navigation">

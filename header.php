@@ -1,4 +1,8 @@
 <?php
+if(is_checkout() || is_cart()){
+	get_template_part('header','loja');
+    return;
+}
 /**
  * The Header for our theme.
  *

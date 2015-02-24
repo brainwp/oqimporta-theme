@@ -368,3 +368,4 @@ function is_post_type( $tipo ){
  	return true;
  	return false;
 }
+add_theme_support('woocommerce');

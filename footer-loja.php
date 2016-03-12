@@ -24,7 +24,7 @@
 				<img src="<?php echo get_template_directory_uri()?>/images/social.png">
 			</div>
 		</div><!-- .site-info -->
-		<div id="mais-info">O Q Importa | Consultoria de Imagem e Estilo | Todos os Direitos Reservados 2014</div>
+		<div id="mais-info">Whatmatters - Lifestyle Channel - 2016</div>
 		<div class="logo-brasa"><a href="http://www.brasa.art.br" target="_blank"><img title="Brasa Design" src="<?php echo get_stylesheet_directory_uri().'/images/brasa.png'; ?>"></a></div>
 	</footer><!-- #colophon -->
 </div><!-- #page -->
